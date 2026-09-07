@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://poetessa.pp.ua/sitemap.xml

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Книги Юлії Забіяки — дитяча поезія, християнська література та проза."
+  >
+
+  <title>Книги — Юлія Забіяка</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=PT+Sans:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Застосування теми до появи сторінки -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+
+      const theme =
+        savedTheme === "dark"
+          ? "dark"
+          : savedTheme === "light"
+            ? "light"
+            : (
+                window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches
+              )
+                ? "dark"
+                : "light";
+
+      document.documentElement.setAttribute(
+        "data-theme",
+        theme
+      );
+    })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HLBWGYJRE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6HLBWGYJRE');
+  </script>
+
+</head>
+
+<body>
+
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+  <div class="wrap nav-row">
+
+    <a
+      class="brand"
+      href="index.html"
+    >
+      <span class="brand-name">
+        Юлія Забіяка
+      </span>
+
+      <small>
+        Поетеса · Письменниця · Християнка
+      </small>
+    </a>
+
+
+    <button
+      id="navToggle"
+      class="nav-toggle"
+      type="button"
+      aria-label="Відкрити меню"
+      aria-expanded="false"
+      aria-controls="mainNav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
+    <div class="nav-area">
+
+      <nav
+        id="mainNav"
+        class="main-nav"
+        aria-label="Головна навігація"
+      >
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Головна
+            </a>
+          </li>
+
+          <li>
+            <a href="pro-mene.html">
+              Про мене
+            </a>
+          </li>
+
+          <li>
+            <a href="poeziya.html">
+              Поезія
+            </a>
+          </li>
+
+          <li>
+            <a href="proza.html">
+              Проза
+            </a>
+          </li>
+
+          <li>
+            <a href="video.html">
+              Відео
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="knygy.html"
+              class="active"
+              aria-current="page"
+            >
+              Книги
+            </a>
+          </li>
+
+          <li>
+            <a href="kontakty.html">
+              Контакти
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Увімкнути темну тему"
+        title="Змінити тему"
+      >
+        <span class="theme-icon theme-icon-light">
+          ☀
+        </span>
+
+        <span class="theme-icon theme-icon-dark">
+          ☾
+        </span>
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
+<main id="main">
+
+
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <section class="page-hero wrap">
+
+    <div class="section-head reveal">
+
+      <p class="section-eyebrow">
+        Видання
+      </p>
+
+      <h1>
+        Книги
+      </h1>
+
+      <p>
+        Книги для дітей, родини та всіх,
+        хто любить українське слово,
+        добрі історії та щиру поезію.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       BOOKS
+       ======================================================= -->
+
+  <section class="books-section">
+
+    <div class="wrap">
+
+      <div class="books-list">
+
+
+        <!-- ===================================================
+             BOOK 1
+             =================================================== -->
+
+        <article class="book-card reveal">
+
+          <div class="book-cover">
+
+            <img
+              src="image/b1.jpeg"
+              alt="Обкладинка книги «Віршенята-гралочки»"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="book-info">
+
+            <p class="book-category">
+              Дитяча поезія
+            </p>
+
+            <h2>
+              Віршенята-гралочки
+            </h2>
+
+            <p class="book-description">
+              Забавлянки, утішки, руханки,
+              лічилки для малят.
+            </p>
+
+
+            <div class="book-actions">
+
+              <a
+                class="book-button btn"
+                href="https://www.yakaboo.ua/virshenjata-gralochki-zabavljanki-utishki-ruhanki-lichilki-dlja-maljat.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Придбати книгу
+                <span aria-hidden="true">→</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===================================================
+             BOOK 2
+             =================================================== -->
+
+        <article class="book-card reveal">
+
+          <div class="book-cover">
+
+            <img
+              src="image/b2.jpeg"
+              alt="Обкладинка книги «Віршенята на щодень»"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="book-info">
+
+            <p class="book-category">
+              Дитяча поезія
+            </p>
+
+            <h2>
+              Віршенята на щодень
+            </h2>
+
+            <p class="book-description">
+              Примовки, потішки, забавлянки,
+              колисанки для малят.
+            </p>
+
+
+            <div class="book-actions">
+
+              <a
+                class="book-button btn"
+                href="https://www.yakaboo.ua/virshenjata-na-schoden-primovki-potishki-zabavljanki-kolisanki-dlja-maljat.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Придбати книгу
+                <span aria-hidden="true">→</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===================================================
+             BOOK 3
+             =================================================== -->
+
+        <article class="book-card reveal">
+
+          <div class="book-cover">
+
+            <img
+              src="image/b3.jpeg"
+              alt="Обкладинка книги «Вірші Забіяки»"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="book-info">
+
+            <p class="book-category">
+              Дитяча поезія
+            </p>
+
+            <h2>
+              Вірші Забіяки
+            </h2>
+
+            <p class="book-description">
+              Вірші для наймолодших читачів
+              від Юлії Забіяки.
+            </p>
+
+
+            <div class="book-actions">
+
+              <a
+                class="book-button btn"
+                href="https://rozetka.com.ua/ua/423302622/p423302622/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Придбати книгу
+                <span aria-hidden="true">→</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===================================================
+             BOOK 4
+             =================================================== -->
+
+        <article class="book-card reveal">
+
+          <div class="book-cover">
+
+            <img
+              src="image/b4.jpeg"
+              alt="Обкладинка книги «Християнські вірші та проза»"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <div class="book-info">
+
+            <p class="book-category">
+              Християнська література
+            </p>
+
+            <h2>
+              Християнські вірші та проза
+            </h2>
+
+            <p class="book-description">
+              Поезія та проза про віру,
+              молитву, любов, надію
+              та духовні цінності.
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+ 
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="wrap">
+
+    <p class="footer-quote">
+  «Нехай слова знаходять шлях до серця.»
+</p>
+
+
+    <div class="footer-row">
+
+      <div>
+
+        <nav
+          class="footer-nav"
+          aria-label="Навігація у футері"
+        >
+
+          <ul>
+
+            <li>
+              <a href="index.html">
+                Головна
+              </a>
+            </li>
+
+            <li>
+              <a href="pro-mene.html">
+                Про мене
+              </a>
+            </li>
+
+            <li>
+              <a href="poeziya.html">
+                Поезія
+              </a>
+            </li>
+
+            <li>
+              <a href="proza.html">
+                Проза
+              </a>
+            </li>
+
+            <li>
+              <a href="video.html">
+                Відео
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="knygy.html"
+                aria-current="page"
+              >
+                Книги
+              </a>
+            </li>
+
+            <li>
+              <a href="kontakty.html">
+                Контакти
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+
+        <p class="footer-fine">
+  © Юлія Забіяка.
+          Пишу серцем · Живу вірою · Люблю Україну
+</p>
+
+      </div>
+
+
+      <div class="footer-social">
+
+        <a
+          href="https://www.facebook.com/ulia.zabiaka/directory_work"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>
+
+        <a
+          href="https://www.instagram.com/iuliiaenei"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     SCROLL TO TOP
+     ========================================================= -->
+
+<button
+  id="toTop"
+  type="button"
+  aria-label="Повернутися нагору"
+  title="На початок сторінки"
+>
+  ↑
+</button>
+
+
+<!-- =========================================================
+     MAIN JAVASCRIPT
+     ========================================================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

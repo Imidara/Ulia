@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Контакти Юлії Забіяки. Електронна пошта, Facebook та Instagram."
+  >
+
+  <title>Контакти — Юлія Забіяка</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=PT+Sans:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Застосування теми до появи сторінки -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem("theme");
+
+      const theme =
+        savedTheme === "dark"
+          ? "dark"
+          : savedTheme === "light"
+            ? "light"
+            : (
+                window.matchMedia &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches
+              )
+                ? "dark"
+                : "light";
+
+      document.documentElement.setAttribute(
+        "data-theme",
+        theme
+      );
+    })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HLBWGYJRE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6HLBWGYJRE');
+  </script>
+
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+  <div class="wrap nav-row">
+
+    <a
+      class="brand"
+      href="index.html"
+    >
+      <span class="brand-name">
+        Юлія Забіяка
+      </span>
+
+      <small>
+        Поетеса · Письменниця · Християнка
+      </small>
+    </a>
+
+
+    <button
+      id="navToggle"
+      class="nav-toggle"
+      type="button"
+      aria-label="Відкрити меню"
+      aria-expanded="false"
+      aria-controls="mainNav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
+    <div class="nav-area">
+
+      <nav
+        id="mainNav"
+        class="main-nav"
+        aria-label="Головна навігація"
+      >
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Головна
+            </a>
+          </li>
+
+          <li>
+            <a href="pro-mene.html">
+              Про мене
+            </a>
+          </li>
+
+          <li>
+            <a href="poeziya.html">
+              Поезія
+            </a>
+          </li>
+
+          <li>
+            <a href="proza.html">
+              Проза
+            </a>
+          </li>
+
+          <li>
+            <a href="video.html">
+              Відео
+            </a>
+          </li>
+
+          <li>
+            <a href="knygy.html">
+              Книги
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="kontakty.html"
+              class="active"
+              aria-current="page"
+            >
+              Контакти
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Увімкнути темну тему"
+        title="Змінити тему"
+      >
+        <span class="theme-icon theme-icon-light">
+          ☀
+        </span>
+
+        <span class="theme-icon theme-icon-dark">
+          ☾
+        </span>
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
+<main id="main">
+
+
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <section class="page-hero wrap">
+
+    <div class="section-head reveal">
+
+      <p class="section-eyebrow">
+        Буду рада спілкуванню
+      </p>
+
+      <h1>
+        Контакти
+      </h1>
+
+      <p>
+        Буду рада спілкуванню, відгукам
+        та знайомству з читачами.
+        Запрошую завітати на мої сторінки
+        у соціальних мережах.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       CONTACTS
+       ======================================================= -->
+
+  <section class="contacts-section">
+
+    <div class="wrap">
+
+      <div class="contacts-grid">
+
+
+        <!-- ===================================================
+             EMAIL
+             =================================================== -->
+
+        <article class="contact-card contact-card-email reveal">
+
+          <div class="contact-card-icon" aria-hidden="true">
+            ✉
+          </div>
+
+          <div class="contact-card-content">
+
+            <p class="contact-card-label">
+              Електронна пошта
+            </p>
+
+            <h2>
+              Написати мені
+            </h2>
+
+            <p>
+              Для запитань, відгуків,
+              пропозицій та спілкування.
+            </p>
+
+            <a
+              class="contact-email"
+              href="mailto:murzik100@ukr.net"
+            >
+              murzik100@ukr.net
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===================================================
+             FACEBOOK
+             =================================================== -->
+
+        <article class="contact-card reveal">
+
+          <div class="contact-card-icon" aria-hidden="true">
+            f
+          </div>
+
+          <div class="contact-card-content">
+
+            <p class="contact-card-label">
+              Соціальна мережа
+            </p>
+
+            <h2>
+              Facebook
+            </h2>
+
+            <p>
+              Запрошую на мою сторінку,
+              де можна поспілкуватися
+              та стежити за новинами.
+            </p>
+
+            <a
+              class="contact-social-link"
+              href="https://www.facebook.com/ulia.zabiaka/directory_work"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Відвідати Facebook
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- ===================================================
+             INSTAGRAM
+             =================================================== -->
+
+        <article class="contact-card reveal">
+
+          <div class="contact-card-icon" aria-hidden="true">
+            ◎
+          </div>
+
+          <div class="contact-card-content">
+
+            <p class="contact-card-label">
+              Соціальна мережа
+            </p>
+
+            <h2>
+              Instagram
+            </h2>
+
+            <p>
+              Долучайтеся до моєї сторінки
+              та відкривайте нові моменти
+              творчого життя.
+            </p>
+
+            <a
+              class="contact-social-link"
+              href="https://www.instagram.com/iuliiaenei"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Відвідати Instagram
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       BOTTOM NOTE
+       ======================================================= -->
+
+  <section class="contacts-note">
+
+    <div class="wrap">
+
+      <div class="contacts-note-inner reveal">
+
+        <div class="contacts-note-mark" aria-hidden="true">
+          ✒
+        </div>
+
+        <div>
+
+          <p class="section-eyebrow">
+            З любов'ю до читачів
+          </p>
+
+          <h2>
+            Кожне слово починається зі спілкування
+          </h2>
+
+          <p>
+            Дякую, що читаєте, слухаєте
+            та підтримуєте мою творчість.
+            Буду рада вашим словам,
+            думкам і відгукам.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="wrap">
+
+    <p class="footer-quote">
+      «Нехай слова знаходять шлях до серця.»
+    </p>
+
+
+    <div class="footer-row">
+
+      <div>
+
+        <nav
+          class="footer-nav"
+          aria-label="Навігація у футері"
+        >
+
+          <ul>
+
+            <li>
+              <a href="index.html">
+                Головна
+              </a>
+            </li>
+
+            <li>
+              <a href="pro-mene.html">
+                Про мене
+              </a>
+            </li>
+
+            <li>
+              <a href="poeziya.html">
+                Поезія
+              </a>
+            </li>
+
+            <li>
+              <a href="proza.html">
+                Проза
+              </a>
+            </li>
+
+            <li>
+              <a href="video.html">
+                Відео
+              </a>
+            </li>
+
+            <li>
+              <a href="knygy.html">
+                Книги
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="kontakty.html"
+                aria-current="page"
+              >
+                Контакти
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+
+        <p class="footer-fine">
+          © Юлія Забіяка.
+          Пишу серцем · Живу вірою · Люблю Україну
+        </p>
+
+      </div>
+
+
+      <div class="footer-social">
+
+        <a
+          href="https://www.facebook.com/ulia.zabiaka/directory_work"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>
+
+        <a
+          href="https://www.instagram.com/iuliiaenei"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     SCROLL TO TOP
+     ========================================================= -->
+
+<button
+  id="toTop"
+  type="button"
+  aria-label="Повернутися нагору"
+  title="На початок сторінки"
+>
+  ↑
+</button>
+
+
+<!-- =========================================================
+     MAIN JAVASCRIPT
+     ========================================================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

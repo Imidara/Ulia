@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Проза — Юлія Забіяка</title>
+  <meta
+    name="description"
+    content="Проза Юлії Забіяки. Казки, оповідання та історії для дітей і дорослих про життя, дружбу, добро, родину та важливі людські цінності."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=Caveat:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HLBWGYJRE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6HLBWGYJRE');
+  </script>
+
+</head>
+
+<body>
+
+<!-- ========================= HEADER ========================= -->
+
+<header class="site-header">
+
+  <div class="wrap nav-row">
+
+    <a class="brand" href="index.html">
+      <span class="brand-name">Юлія Забіяка</span>
+      <small>Поетеса · Письменниця · Християнка</small>
+    </a>
+
+    <!-- Мобільне меню -->
+
+    <button
+      id="navToggle"
+      class="nav-toggle"
+      type="button"
+      aria-label="Відкрити меню"
+      aria-expanded="false"
+      aria-controls="mainNav"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-area">
+
+      <nav id="mainNav" class="main-nav" aria-label="Головна навігація">
+
+        <ul>
+
+          <li>
+            <a href="index.html">Головна</a>
+          </li>
+
+          <li>
+            <a href="pro-mene.html">Про мене</a>
+          </li>
+
+          <li>
+            <a href="poeziya.html">Поезія</a>
+          </li>
+
+          <li>
+            <a href="proza.html" class="active">Проза</a>
+          </li>
+
+          <li>
+            <a href="video.html">Відео</a>
+          </li>
+
+          <li>
+            <a href="knygy.html">Книги</a>
+          </li>
+
+          <li>
+            <a href="kontakty.html">Контакти</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- Перемикач теми -->
+
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        title="Змінити тему"
+        aria-label="Змінити тему"
+      >
+        <span class="theme-icon theme-icon-light">☀</span>
+        <span class="theme-icon theme-icon-dark">☾</span>
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<!-- ========================= PAGE HERO ========================= -->
+
+<section class="page-hero wrap">
+
+  <div class="section-head reveal">
+
+    <p class="section-eyebrow">
+      Творчість
+    </p>
+
+    <h1>
+      Проза
+    </h1>
+
+    <p>
+      Оповідання та історії Юлії Забіяки —
+      про добро, дружбу, родину, пізнання світу
+      та важливі життєві цінності.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ========================= SEARCH ========================= -->
+
+<section class="wrap poetry-search-section">
+
+  <div class="poetry-search-panel reveal">
+
+    <div class="search-heading">
+
+      <p class="section-eyebrow">
+        Знайти оповідання
+      </p>
+
+      <h2>
+        Шукайте слово, назву або хештег
+      </h2>
+
+    </div>
+
+
+    <!-- Поле пошуку -->
+
+    <div class="poetry-search">
+
+      <label for="proseSearch">
+        Пошук прози
+      </label>
+
+      <div class="search-input-wrap">
+
+        <span class="search-icon" aria-hidden="true">
+          ⌕
+        </span>
+
+        <input
+          id="proseSearch"
+          type="search"
+          placeholder="Наприклад: Спуня, дружба або бібліотека..."
+          autocomplete="off"
+        >
+
+        <button
+          id="clearProseSearch"
+          type="button"
+          class="search-clear"
+          aria-label="Очистити пошук"
+          title="Очистити"
+          hidden
+        >
+          ×
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- Категорії -->
+
+    <div class="poetry-filters">
+
+      <div class="filter-group">
+
+        <span class="filter-label">
+          Категорія
+        </span>
+
+        <div
+          id="proseCategories"
+          class="filter-buttons"
+          role="group"
+          aria-label="Фільтр за категорією"
+        >
+
+          <button
+            type="button"
+            class="filter-button active"
+            data-category="all"
+          >
+            Усі
+          </button>
+
+          <button
+            type="button"
+            class="filter-button"
+            data-category="dytiacha"
+          >
+            Для дітей
+          </button>
+
+          <button
+            type="button"
+            class="filter-button filter-button-favorites"
+            data-category="favorites"
+          >
+            ♥ Улюблене
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Хештеги -->
+
+    <div class="poetry-tags-filter">
+
+      <span class="filter-label">
+        Хештеги
+      </span>
+
+      <div
+        id="proseTags"
+        class="filter-tags"
+        aria-label="Фільтр за хештегом"
+      >
+        <!-- JavaScript додасть хештеги -->
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ========================= RESULTS ========================= -->
+
+<section class="wrap poetry-results-section">
+
+  <div class="results-header reveal">
+
+    <div>
+
+      <p class="section-eyebrow">
+        Моя проза
+      </p>
+
+      <h2>
+        Оповідання
+      </h2>
+
+    </div>
+
+    <p
+      id="proseResultsCount"
+      class="results-count"
+      aria-live="polite"
+    >
+      Завантажуємо...
+    </p>
+
+  </div>
+
+
+  <!-- Сюди JavaScript вставить картки -->
+
+  <div
+    id="proseList"
+    class="poetry-grid"
+    aria-live="polite"
+  >
+
+    <div class="poetry-loading">
+
+      <span class="loading-mark">
+        ✦
+      </span>
+
+      <p>
+        Завантажуємо прозу...
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- Нічого не знайдено -->
+
+  <div
+    id="proseEmpty"
+    class="poetry-empty"
+    hidden
+  >
+
+    <div class="empty-icon">
+      ✦
+    </div>
+
+    <h3>
+      Нічого не знайдено
+    </h3>
+
+    <p>
+      Спробуйте змінити пошуковий запит
+      або вибрати іншу категорію.
+    </p>
+
+    <button
+      id="resetProseFilters"
+      type="button"
+      class="btn"
+    >
+      Показати всі оповідання
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ========================= NOTE ========================= -->
+
+<section class="wrap poetry-note-section">
+
+  <div class="poetry-note reveal">
+
+    <div class="poetry-note-mark">
+      ✒
+    </div>
+
+    <div>
+
+      <p class="section-eyebrow">
+        Про прозу
+      </p>
+
+      <h2>
+        Історії, у яких є місце добру
+      </h2>
+
+      <p>
+        Тут зібрані оповідання та казкові історії
+        для дітей і дорослих. Кожна історія має
+        свою тему, героїв та маленьку думку,
+        яку можна забрати із собою.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ========================= FOOTER ========================= -->
+
+<footer>
+
+  <div class="wrap">
+
+    <p class="footer-quote">
+      «Нехай слова знаходять шлях до серця.»
+    </p>
+
+    <div class="footer-row">
+
+      <div>
+
+        <nav class="footer-nav" aria-label="Навігація у підвалі">
+
+          <ul>
+
+            <li>
+              <a href="index.html">Головна</a>
+            </li>
+
+            <li>
+              <a href="pro-mene.html">Про мене</a>
+            </li>
+
+            <li>
+              <a href="poeziya.html">Поезія</a>
+            </li>
+
+            <li>
+              <a href="proza.html">Проза</a>
+            </li>
+
+            <li>
+              <a href="video.html">Відео</a>
+            </li>
+
+            <li>
+              <a href="knygy.html">Книги</a>
+            </li>
+
+            <li>
+              <a href="kontakty.html">Контакти</a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+        <p class="footer-fine">
+          © Юлія Забіяка.
+          Пишу серцем · Живу вірою · Люблю Україну
+        </p>
+
+      </div>
+
+
+      <div class="footer-social">
+
+        <a
+          href="https://www.facebook.com/ulia.zabiaka/directory_work"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>
+
+        <a
+          href="https://www.instagram.com/iuliiaenei"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ========================= SCROLL TO TOP ========================= -->
+
+<button
+  id="toTop"
+  title="Нагору"
+  aria-label="Прокрутити нагору"
+  type="button"
+>
+  ↑
+</button>
+
+
+<!-- ========================= JAVASCRIPT ========================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>

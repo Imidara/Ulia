@@ -1,200 +1,699 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Юлія Забіяка — Поетеса · Письменниця · Християнка</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=Caveat:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Юлія Забіяка — поетеса, письменниця, авторка поезії та прози."
+  >
+
+  <title>Юлія Забіяка — Поетеса · Письменниця · Християнка</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=Caveat:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <meta name="google-site-verification" content="reYS4NM4ZZEbdsELGBn08yo0EbOJ1c5t1uS3MLdPk6k" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6HLBWGYJRE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6HLBWGYJRE');
+</script>
 
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="wrap nav-row">
-    <a class="brand" href="index.html">Юлія Забіяка
-      <small>Поетеса · Письменниця · Християнка</small>
-    </a>
-    <nav class="main-nav" aria-label="Головна навігація">
-      <ul>
-        <li><a href="index.html" class="active">Головна</a></li>
-        <li><a href="pro-mene.html">Про мене</a></li>
-        <li><a href="poeziya.html">Поезія</a></li>
-        <li><a href="proza.html">Проза</a></li>
-        <li><a href="video.html">Відео</a></li>
-        <li><a href="knygy.html">Книги</a></li>
-        <li><a href="kontakty.html">Контакти</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
 
-<main>
+  <header class="site-header">
 
-  <!-- HERO -->
-  <section class="hero wrap">
-    <div>
-      <p class="hero-eyebrow"></p>
-      <h1>Пишу серцем.<br>Живу <span class="accent">вірою</span>.<br>Люблю Україну.</h1>
-      <p class="hero-lede">Вірші та проза Юлії Забіяки — про дитинство, віру та любов до рідної землі. Кожен рядок написаний для того, щоб знайти шлях до серця.</p>
-      <div style="display:flex; gap:16px; flex-wrap:wrap;">
-        <a class="btn" href="pro-mene.html">Дізнатися більше про мене →</a>
-        <a class="btn ghost" href="poeziya.html">Читати поезію</a>
-     <a class="btn ghost" href="proza.html">Читати прозу</a>
-<div id="poems"></div>
-      </div>
-    </div>
-    <div class="hero-portrait">
-      <div class="portrait-frame">
-        <img src="image/p2.jpg" alt="Юлія Забіяка">
-      </div>
-      <span class="portrait-tag">Юлія Забіяка</span>
-    </div>
-  </section>
+    <div class="wrap nav-row">
 
-  <div class="wrap"><div class="stitch-divider"></div></div>
-
-  <!-- ТВОРЧІСТЬ -->
-  <section class="wrap">
-    <div class="section-head reveal">
-      <p class="section-eyebrow">Моя творчість</p>
-      <h2>Три голоси одного серця</h2>
-      <p>Дитяча радість, тиха молитва та історії, що надихають, — усе це живе поруч у моїх текстах.</p>
-    </div>
-    <div class="card-grid">
-      <a class="card reveal" href="poeziya.html#dytyachi">
-        <div class="stitch-divider thin"></div>
-        <h3>Для дітей</h3>
-        <p>Добрі та світлі дитячі вірші, забавлянки й історії, які допомагають пізнавати світ.</p>
-        <span class="card-link">Читати →</span>
+      <a class="brand" href="index.html">
+        <span class="brand-name">Юлія Забіяка</span>
+        <small>Поетеса · Письменниця · Християнка</small>
       </a>
-      <a class="card reveal" href="poeziya.html#liryka">
-        <div class="stitch-divider thin"></div>
-        <h3>Лірика для дорослих</h3>
-        <p>Поезія про почуття, стосунки, життя.</p>
-        <span class="card-link">Читати →</span>
-      </a>
-      <a class="card reveal" href="poeziya.html#hrystyianska">
-        <div class="stitch-divider thin"></div>
-        <h3>Християнська поезія</h3>
-        <p>Вірші про віру, Бога, молитву, надію, любов та духовні цінності.</p>
-        <span class="card-link">Читати →</span>
-      </a>
-      <a class="card reveal" href="poeziya.html#proza">
-        <div class="stitch-divider thin"></div>
-        <h3>Проза</h3>
-        <p>Надихаючі та добрі історії — для дітей і для дорослих.</p>
-        <span class="card-link">Читати →</span>
-      </a>
-    </div>
-  </section>
 
-  <!-- ВІРШ ДНЯ -->
-  <section class="wrap">
-    <div class="poem-panel reveal">
-      <p class="poem-eyebrow">Вірш дня</p>
-      <p class="poem-title">«А вірші пишуться...»</p>
-      <p class="poem-text">А вірші пишуться, хоч падають ракети…<br>
-      Хоча реальність маємо важку,<br>
-      Та Україну ворогам не стерти —<br>
-      Стоїть вона в калиновім вінку.</p>
-      <div class="poem-tags">
-        <span class="tag">#Україна</span>
-        <span class="tag">#віра</span>
-        <span class="tag">#надія</span>
-        <span class="tag">#калина</span>
-      </div>
-    </div>
-  </section>
+      <!-- Mobile menu button -->
+      <button
+        id="navToggle"
+        class="nav-toggle"
+        type="button"
+        aria-label="Відкрити меню"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-  <div class="wrap"><div class="stitch-divider"></div></div>
+      <div class="nav-area">
 
-  <!-- КНИГИ -->
-  <section class="wrap">
-    <div class="section-head reveal">
-      <p class="section-eyebrow">Мої книги</p>
-      <h2>Чотири книги для маленьких і великих читачів</h2>
-    </div>
-    <div class="books-row reveal">
-      <div class="books-photo">
-        <img src="image/p1.jpg" alt="Юлія Забіяка тримає книги">
-      </div>
-      <div>
-        <ul class="book-list">
-          <li>
-            <span class="book-num">01</span>
-            <div><h4>Вірші Забіяки</h4><span>Вірші для наймолодших читачів.</span></div>
-          </li>
-          <li>
-            <span class="book-num">02</span>
-            <div><h4>Віршенята-гралочки</h4><span>Забавлянки, утішки, руханки, лічилки для малят.</span></div>
-          </li>
-          <li>
-            <span class="book-num">03</span>
-            <div><h4>Віршенята на щодень</h4><span>Примовки, потішки, забавлянки, колисанки для малят.</span></div>
-          </li>
-          <li>
-            <span class="book-num">04</span>
-            <div><h4>Християнські вірші та проза</h4><span>Духовна лірика та проза для дорослих читачів.</span></div>
-          </li>
-        </ul>
-        <a class="btn" href="knygy.html">Переглянути та придбати книги →</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <p class="footer-quote">«Нехай слова знаходять шлях до серця.»</p>
-    <div class="footer-row">
-      <div>
-        <nav class="footer-nav" aria-label="Навігація у підвалі">
+        <nav
+          id="mainNav"
+          class="main-nav"
+          aria-label="Головна навігація"
+        >
           <ul>
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="pro-mene.html">Про мене</a></li>
-            <li><a href="poeziya.html">Поезія</a></li>
-            <li><a href="knygy.html">Книги</a></li>
-            <li><a href="kontakty.html">Контакти</a></li>
+
+            <li>
+              <a class="active" href="index.html">
+                Головна
+              </a>
+            </li>
+
+            <li>
+              <a href="pro-mene.html">
+                Про мене
+              </a>
+            </li>
+
+            <li>
+              <a href="poeziya.html">
+                Поезія
+              </a>
+            </li>
+
+            <li>
+              <a href="proza.html">
+                Проза
+              </a>
+            </li>
+
+            <li>
+              <a href="video.html">
+                Відео
+              </a>
+            </li>
+
+            <li>
+              <a href="knygy.html">
+                Книги
+              </a>
+            </li>
+
+            <li>
+              <a href="kontakty.html">
+                Контакти
+              </a>
+            </li>
+
           </ul>
         </nav>
-        <p class="footer-fine">© Юлія Забіяка. Пишу серцем · Живу вірою · Люблю Україну</p>
+
+        <!-- Theme switch -->
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          type="button"
+          title="Змінити тему"
+          aria-label="Змінити тему"
+        >
+          <span class="theme-icon theme-icon-light">☀</span>
+          <span class="theme-icon theme-icon-dark">☾</span>
+        </button>
+
       </div>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/ulia.zabiaka/directory_work" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://www.instagram.com/iuliiaenei" target="_blank" rel="noopener">Instagram</a>
-      </div>
+
     </div>
-  </div>
-</footer>
 
-<button id="toTop" aria-label="Прокрутити нагору">↑</button>
+  </header>
 
-<script>
-  // Scroll reveal
-  const items = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in-view');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  items.forEach(el => io.observe(el));
 
-  // Scroll to top button
-  const toTopBtn = document.getElementById('toTop');
-  window.addEventListener('scroll', () => {
-    toTopBtn.classList.toggle('show', window.scrollY > 500);
-  });
-  toTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-<script src="script.js"></script>
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="hero wrap">
+
+      <div class="hero-content reveal">
+
+        <p class="hero-eyebrow">
+          Слово, що живе в серці
+        </p>
+
+        <h1>
+          Пишу серцем.<br>
+          Живу <span class="accent">вірою</span>.<br>
+          Люблю Україну.
+        </h1>
+
+        <p class="hero-lede">
+          Вірші та проза Юлії Забіяки — про дитинство,
+          віру та любов до рідної землі.
+          Кожен рядок написаний для того,
+          щоб знайти шлях до серця.
+        </p>
+
+        <div class="hero-actions">
+
+          <a class="btn" href="pro-mene.html">
+            Дізнатися більше про мене →
+          </a>
+
+          <a class="btn ghost" href="poeziya.html">
+            Читати поезію
+          </a>
+
+          <a class="btn ghost" href="proza.html">
+            Читати прозу
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-portrait reveal">
+
+        <div class="portrait-frame">
+
+          <img
+            src="image/p2.jpg"
+            alt="Юлія Забіяка"
+            width="800"
+            height="800"
+          >
+
+        </div>
+
+        <span class="portrait-tag">
+          Юлія Забіяка
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- Decorative divider -->
+
+    <div class="wrap">
+      <div class="stitch-divider"></div>
+    </div>
+
+
+    <!-- ===================================================
+         CREATIVE DIRECTIONS
+    ==================================================== -->
+
+    <section class="wrap section-creativity">
+
+      <div class="section-head reveal">
+
+        <p class="section-eyebrow">
+          Моя творчість
+        </p>
+
+        <h2>
+          Три голоси одного серця
+        </h2>
+
+        <p>
+          Дитяча радість, тиха молитва та історії,
+          що надихають, — усе це живе поруч
+          у моїх текстах.
+        </p>
+
+      </div>
+
+
+      <div class="card-grid">
+
+
+        <!-- CHILDREN -->
+
+        <a
+          class="card reveal"
+          href="poeziya.html?category=dytiacha"
+        >
+
+          <div class="stitch-divider thin"></div>
+
+          <h3>
+            Для дітей
+          </h3>
+
+          <p>
+            Добрі та світлі дитячі вірші,
+            забавлянки й історії,
+            які допомагають пізнавати світ.
+          </p>
+
+          <span class="card-link">
+            Читати →
+          </span>
+
+        </a>
+
+
+        <!-- LYRICS -->
+
+        <a
+          class="card reveal"
+          href="poeziya.html?category=liryka"
+        >
+
+          <div class="stitch-divider thin"></div>
+
+          <h3>
+            Лірика для дорослих
+          </h3>
+
+          <p>
+            Поезія про почуття,
+            стосунки та життя.
+          </p>
+
+          <span class="card-link">
+            Читати →
+          </span>
+
+        </a>
+
+
+        <!-- CHRISTIAN POETRY -->
+
+        <a
+          class="card reveal"
+          href="poeziya.html?category=hrystyianska"
+        >
+
+          <div class="stitch-divider thin"></div>
+
+          <h3>
+            Християнська поезія
+          </h3>
+
+          <p>
+            Вірші про віру, Бога, молитву,
+            надію, любов та духовні цінності.
+          </p>
+
+          <span class="card-link">
+            Читати →
+          </span>
+
+        </a>
+
+
+        <!-- PROSE -->
+
+        <a
+          class="card reveal"
+          href="proza.html"
+        >
+
+          <div class="stitch-divider thin"></div>
+
+          <h3>
+            Проза
+          </h3>
+
+          <p>
+            Надихаючі та добрі історії —
+            для дітей і для дорослих.
+          </p>
+
+          <span class="card-link">
+            Читати →
+          </span>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         POEM OF THE DAY
+         Data comes from poems.json
+    ==================================================== -->
+
+    <section class="wrap featured-poem-section">
+
+      <div
+        id="featuredPoem"
+        class="poem-panel reveal"
+      >
+
+        <div
+          id="poemLoading"
+          class="poem-loading"
+        >
+
+          <p class="poem-eyebrow">
+            Вірш дня
+          </p>
+
+          <p class="poem-loading-text">
+            Завантажуємо слово...
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Decorative divider -->
+
+    <div class="wrap">
+      <div class="stitch-divider"></div>
+    </div>
+
+
+    <!-- ===================================================
+         BOOKS
+    ==================================================== -->
+
+    <section class="wrap books-section">
+
+      <div class="section-head reveal">
+
+        <p class="section-eyebrow">
+          Мої книги
+        </p>
+
+        <h2>
+          Чотири книги для маленьких
+          і великих читачів
+        </h2>
+
+        <p>
+          Видання, у яких живуть вірші,
+          забавлянки, духовна лірика
+          та добрі історії.
+        </p>
+
+      </div>
+
+
+      <div class="books-row reveal">
+
+
+        <div class="books-photo">
+
+          <img
+            src="image/p1.jpg"
+            alt="Юлія Забіяка тримає свої книги"
+            width="900"
+            height="900"
+          >
+
+        </div>
+
+
+        <div>
+
+          <ul class="book-list">
+
+            <li>
+
+              <span class="book-num">
+                01
+              </span>
+
+              <div>
+
+                <h4>
+                  Вірші Забіяки
+                </h4>
+
+                <span>
+                  Вірші для наймолодших читачів.
+                </span>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <span class="book-num">
+                02
+              </span>
+
+              <div>
+
+                <h4>
+                  Віршенята-гралочки
+                </h4>
+
+                <span>
+                  Забавлянки, утішки, руханки,
+                  лічилки для малят.
+                </span>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <span class="book-num">
+                03
+              </span>
+
+              <div>
+
+                <h4>
+                  Віршенята на щодень
+                </h4>
+
+                <span>
+                  Примовки, потішки, забавлянки,
+                  колисанки для малят.
+                </span>
+
+              </div>
+
+            </li>
+
+
+            <li>
+
+              <span class="book-num">
+                04
+              </span>
+
+              <div>
+
+                <h4>
+                  Християнські вірші та проза
+                </h4>
+
+                <span>
+                  Духовна лірика та проза
+                  для дорослих читачів.
+                </span>
+
+              </div>
+
+            </li>
+
+          </ul>
+
+
+          <a
+            class="btn"
+            href="knygy.html"
+          >
+            Переглянути та придбати книги →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    
+    <!-- ===================================================
+         SEARCH
+    ==================================================== -->
+
+    <section class="wrap search-preview-section">
+
+      <div class="search-preview reveal">
+
+        <p class="section-eyebrow">
+          Усі тексти поруч
+        </p>
+
+        <h2>
+          Шукайте слово, назву або хештег
+        </h2>
+
+        <p>
+          Пошук поезії та прози буде доступний
+          у відповідних розділах сайту.
+        </p>
+
+        <div class="search-preview-actions">
+
+          <a
+            class="btn ghost"
+            href="poeziya.html"
+          >
+            Шукати поезію
+          </a>
+
+          <a
+            class="btn ghost"
+            href="proza.html"
+          >
+            Шукати прозу
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <div class="wrap">
+
+      <p class="footer-quote">
+        «Нехай слова знаходять шлях до серця.»
+      </p>
+
+
+      <div class="footer-row">
+
+        <div>
+
+          <nav
+            class="footer-nav"
+            aria-label="Навігація у підвалі"
+          >
+
+            <ul>
+
+              <li>
+                <a href="index.html">Головна</a>
+              </li>
+
+              <li>
+                <a href="pro-mene.html">Про мене</a>
+              </li>
+
+              <li>
+                <a href="poeziya.html">Поезія</a>
+              </li>
+
+              <li>
+                <a href="proza.html">Проза</a>
+              </li>
+
+              <li>
+                <a href="video.html">Відео</a>
+              </li>
+
+              <li>
+                <a href="knygy.html">Книги</a>
+              </li>
+
+              <li>
+                <a href="kontakty.html">Контакти</a>
+              </li>
+
+            </ul>
+
+          </nav>
+
+
+          <p class="footer-fine">
+            © Юлія Забіяка.
+            Пишу серцем · Живу вірою · Люблю Україну
+          </p>
+
+        </div>
+
+
+        <div class="footer-social">
+
+          <a
+            href="https://www.facebook.com/ulia.zabiaka/directory_work"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook
+          </a>
+
+          <a
+            href="https://www.instagram.com/iuliiaenei"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- Scroll to top -->
+
+  <button
+    id="toTop"
+    title="Нагору"
+    aria-label="Прокрутити нагору"
+    type="button"
+  >
+    ↑
+  </button>
+
+
+  <!-- JavaScript -->
+
+  <script src="script.js"></script>
+
 </body>
 </html>

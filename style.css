@@ -1,424 +1,4988 @@
+/* =========================================================
+   ЮЛІЯ ЗАБІЯКА
+   GLOBAL STYLE
+   Один CSS для всього сайту
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  font-family: "PT Sans", sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+
+  background: var(--bg);
+  color: var(--text);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+
+  overflow-x: hidden;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   2. THEME
+   ========================================================= */
+
 :root {
-    --paper: #F6F1E6;
-    --paper-warm: #EFE6D3;
-    --ink: #2A211B;
-    --ink-soft: #5B4E42;
-    --kalyna: #A93A3F;
-    --kalyna-deep: #7E2A2E;
-    --vyshyvanka: #2C4A63;
-    --gold: #C69A45;
-    --line: rgba(42, 33, 27, 0.14);
-    --radius: 2px;
-    --display: 'Literata', Georgia, serif;
-    --hand: 'Caveat', cursive;
-    --body: 'PT Sans', Arial, sans-serif;
-    --max: 1120px;
+  --bg: #f8f4ed;
+  --bg-soft: #f1eadf;
+  --bg-card: #fffdf9;
+  --bg-card-hover: #ffffff;
+
+  --text: #332d29;
+  --text-soft: #746a63;
+  --text-light: #91857c;
+
+  --accent: #9b4f49;
+  --accent-dark: #793d39;
+  --accent-soft: #ead5d0;
+
+  --green: #687c65;
+  --gold: #b18a52;
+
+  --border: rgba(77, 61, 52, 0.14);
+  --border-strong: rgba(77, 61, 52, 0.25);
+
+  --shadow: 0 14px 45px rgba(55, 39, 29, 0.08);
+  --shadow-hover: 0 20px 55px rgba(55, 39, 29, 0.13);
+
+  --header-bg: rgba(248, 244, 237, 0.92);
+  --footer-bg: #302925;
+
+  --radius: 18px;
+  --radius-small: 12px;
+
+  --content-width: 1180px;
+
+  --transition: 0.3s ease;
+/* Сумісні назви для сторінок Video / About / Contacts */
+  --bg-color: var(--bg);
+  --section-soft: var(--bg-soft);
+  --card-bg: var(--bg-card);
+  --card-background: var(--bg-card);
+
+  --text-color: var(--text);
+  --heading-color: var(--text);
+  --text-muted: var(--text-soft);
+
+  --accent-color: var(--accent);
+  --accent-hover: var(--accent-dark);
+
+  --border-color: var(--border);
+}
+
+
+html[data-theme="dark"] {
+  --bg: #1e1b19;
+  --bg-soft: #272320;
+  --bg-card: #292522;
+  --bg-card-hover: #302b27;
+
+  --text: #eee7df;
+  --text-soft: #bdb1a6;
+  --text-light: #968b81;
+
+  --accent: #d28b82;
+  --accent-dark: #e1a098;
+  --accent-soft: #4b3532;
+
+  --green: #98a991;
+  --gold: #c8a66b;
+
+  --border: rgba(255, 255, 255, 0.10);
+  --border-strong: rgba(255, 255, 255, 0.18);
+
+  --shadow: 0 14px 45px rgba(0, 0, 0, 0.24);
+  --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.32);
+
+  --header-bg: rgba(30, 27, 25, 0.94);
+  --footer-bg: #151311;
+/* Сумісні назви */
+  --bg-color: var(--bg);
+  --section-soft: #191716;
+
+  --card-bg: var(--bg-card);
+  --card-background: var(--bg-card);
+
+  --text-color: var(--text);
+  --heading-color: var(--text);
+  --text-muted: var(--text-soft);
+
+  --accent-color: var(--accent);
+  --accent-hover: var(--accent-dark);
+
+  --border-color: var(--border);
+}
+
+
+/* =========================================================
+   3. TYPOGRAPHY
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Literata", Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+}
+
+h4 {
+  font-size: 1.2rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+::selection {
+  color: #fff;
+  background: var(--accent);
+}
+
+
+/* =========================================================
+   4. GLOBAL LAYOUT
+   ========================================================= */
+
+.wrap {
+  width: min(
+    calc(100% - 40px),
+    var(--content-width)
+  );
+
+  margin-inline: auto;
+}
+
+main {
+  min-height: 60vh;
+}
+
+section {
+  position: relative;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.section-eyebrow,
+.hero-eyebrow,
+.poem-eyebrow {
+  margin-bottom: 0.65rem;
+
+  font-family: "Caveat", cursive;
+  font-size: 1.55rem;
+  font-weight: 600;
+
+  color: var(--accent);
+}
+
+.section-head {
+  max-width: 760px;
+  margin-bottom: 3rem;
+}
+
+.section-head > p:last-child {
+  max-width: 680px;
+  margin-top: 1rem;
+
+  color: var(--text-soft);
+  font-size: 1.08rem;
+}
+
+
+/* =========================================================
+   5. PAGE TRANSITION
+   ========================================================= */
+
+body {
+  animation: pageEnter 0.55s ease both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
   }
 
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  to {
+    opacity: 1;
+  }
+}
 
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+body.page-leaving {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+
+/* =========================================================
+   6. HEADER
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: var(--header-bg);
+
+  border-bottom: 1px solid var(--border);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+.nav-row {
+  min-height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.brand {
+  display: inline-flex;
+  flex-direction: column;
+
+  flex-shrink: 0;
+
+  transition: opacity var(--transition);
+}
+
+.brand:hover {
+  opacity: 0.78;
+}
+
+.brand-name {
+  font-family: "Literata", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.brand small {
+  margin-top: 2px;
+
+  color: var(--text-soft);
+
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.nav-area {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.main-nav ul,
+.footer-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.main-nav a {
+  position: relative;
+
+  display: block;
+
+  padding: 10px 11px;
+
+  color: var(--text-soft);
+
+  font-size: 0.95rem;
+
+  transition:
+    color var(--transition),
+    background-color var(--transition);
+}
+
+.main-nav a::after {
+  content: "";
+
+  position: absolute;
+  left: 11px;
+  right: 11px;
+  bottom: 3px;
+
+  height: 2px;
+
+  background: var(--accent);
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform var(--transition);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--accent);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   7. THEME BUTTON
+   ========================================================= */
+
+.theme-toggle {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--bg-card);
+  color: var(--text);
+
+  transition:
+    transform var(--transition),
+    background-color var(--transition),
+    border-color var(--transition);
+}
+
+.theme-toggle:hover {
+  transform: rotate(12deg);
+  border-color: var(--accent);
+}
+
+.theme-icon-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-icon-light {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-icon-dark {
+  display: inline;
+}
+
+
+/* =========================================================
+   8. MOBILE MENU BUTTON
+   ========================================================= */
+
+.nav-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 9px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: var(--bg-card);
+}
+
+.nav-toggle span {
+  display: block;
+
+  width: 100%;
+  height: 2px;
+
+  margin: 5px 0;
+
+  background: var(--text);
+
+  transition:
+    transform var(--transition),
+    opacity var(--transition);
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   9. HERO
+   ========================================================= */
+
+.hero {
+  min-height: 690px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.8fr);
+
+  align-items: center;
+
+  gap: clamp(50px, 8vw, 110px);
+
+  padding-top: 70px;
+  padding-bottom: 80px;
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-lede {
+  max-width: 650px;
+
+  margin-top: 1.7rem;
+
+  color: var(--text-soft);
+
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 2rem;
+}
+
+.hero-portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+}
+
+.portrait-frame {
+  position: relative;
+
+  width: min(100%, 500px);
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  border-radius: 48% 48% 42% 42%;
+
+  box-shadow: var(--shadow);
+}
+
+.portrait-frame::after {
+  content: "";
+
+  position: absolute;
+  inset: 14px;
+
+  border: 1px solid rgba(255,255,255,0.55);
+  border-radius: inherit;
+
+  pointer-events: none;
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.portrait-tag {
+  position: relative;
+
+  margin-top: -25px;
+  z-index: 2;
+
+  padding: 9px 22px;
+
+  border-radius: 30px;
+
+  background: var(--bg-card);
+
+  color: var(--accent);
+
+  box-shadow: var(--shadow);
+
+  font-family: "Caveat", cursive;
+  font-size: 1.45rem;
+}
+
+
+/* =========================================================
+   10. BUTTONS
+   ========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+
+  padding: 11px 22px;
+
+  border: 1px solid var(--accent);
+  border-radius: 30px;
+
+  background: var(--accent);
+  color: #fff;
+
+  font-weight: 700;
+  line-height: 1.2;
+
+  box-shadow: 0 8px 25px rgba(155, 79, 73, 0.18);
+
+  transition:
+    transform var(--transition),
+    background-color var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+
+  box-shadow: 0 12px 30px rgba(155, 79, 73, 0.25);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+
+  box-shadow: none;
+}
+
+.btn.ghost:hover {
+  background: var(--accent-soft);
+}
+
+
+/* =========================================================
+   11. DIVIDERS
+   ========================================================= */
+
+.stitch-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 10px 0;
+
+  background:
+    repeating-linear-gradient(
+      to right,
+      var(--accent),
+      var(--accent) 5px,
+      transparent 5px,
+      transparent 11px
+    );
+
+  opacity: 0.35;
+}
+
+.stitch-divider.thin {
+  width: 70px;
+  margin-bottom: 22px;
+}
+
+
+/* =========================================================
+   12. CREATIVE CARDS
+   ========================================================= */
+
+.section-creativity,
+.books-section,
+.video-preview-section,
+.search-preview-section,
+.featured-poem-section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+}
+
+.card {
+  min-height: 280px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-7px);
+
+  border-color: var(--accent-soft);
+
+  background: var(--bg-card-hover);
+
+  box-shadow: var(--shadow-hover);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--text-soft);
+}
+
+.card-link {
+  display: inline-block;
+
+  margin-top: auto;
+
+  color: var(--accent);
+
+  font-weight: 700;
+
+  transition:
+    transform var(--transition),
+    color var(--transition);
+}
+
+.card:hover .card-link {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   13. FEATURED POEM
+   ========================================================= */
+
+.poem-panel {
+  position: relative;
+
+  max-width: 920px;
+
+  margin-inline: auto;
+
+  padding: clamp(30px, 6vw, 65px);
+
+  border: 1px solid var(--border);
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--bg-card),
+      var(--bg-soft)
+    );
+
+  box-shadow: var(--shadow);
+
+  transition:
+    background-color var(--transition),
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.poem-panel::before {
+  content: "“";
+
+  position: absolute;
+  top: 15px;
+  left: 30px;
+
+  color: var(--accent);
+
+  font-family: Georgia, serif;
+  font-size: 6rem;
+
+  opacity: 0.18;
+}
+
+.poem-title {
+  margin: 0 0 1.3rem;
+
+  font-family: "Literata", Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.3rem);
+  font-weight: 600;
+}
+
+.poem-text {
+  white-space: pre-line;
+
+  max-width: 760px;
+
+  color: var(--text-soft);
+
+  font-family: "Literata", Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.poem-tags,
+.poetry-card-tags,
+.poem-modal .poem-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 22px;
+}
+
+.tag,
+.poetry-card-tag {
+  display: inline-flex;
+
+  padding: 4px 10px;
+
+  border-radius: 20px;
+
+  background: var(--accent-soft);
+  color: var(--accent);
+
+  font-size: 0.82rem;
+}
+
+.poem-more {
+  display: inline-block;
+
+  margin-top: 25px;
+
+  color: var(--accent);
+
+  font-weight: 700;
+}
+
+.poem-loading,
+.poem-error {
+  padding: 25px;
+  text-align: center;
+  color: var(--text-soft);
+}
+
+
+/* =========================================================
+   14. BOOKS
+   ========================================================= */
+
+.books-row {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: clamp(40px, 7vw, 90px);
+}
+
+.books-photo {
+  position: relative;
+
+  max-width: 510px;
+
+  margin-inline: auto;
+}
+
+.books-photo::before {
+  content: "";
+
+  position: absolute;
+  inset: 18px -18px -18px 18px;
+
+  border: 1px solid var(--accent-soft);
+  border-radius: 24px;
+
+  z-index: 0;
+}
+
+.books-photo img {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  border-radius: 22px;
+
+  box-shadow: var(--shadow);
+}
+
+.book-list {
+  display: grid;
+
+  margin: 0 0 30px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.book-list li {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+
+  gap: 15px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.book-num {
+  color: var(--accent);
+
+  font-family: "Caveat", cursive;
+  font-size: 1.5rem;
+}
+
+.book-list h4 {
+  margin-bottom: 4px;
+}
+
+.book-list span:last-child {
+  color: var(--text-soft);
+}
+
+
+/* =========================================================
+   15. VIDEO
+   ========================================================= */
+
+.video-preview {
+  padding: clamp(30px, 5vw, 55px);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow);
+}
+
+.video-preview-content {
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+}
+
+.video-preview-icon {
+  width: 65px;
+  height: 65px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+  color: white;
+
+  font-size: 1.4rem;
+}
+
+.video-preview p {
+  color: var(--text-soft);
+}
+
+
+/* =========================================================
+   16. VIDEO GRID
+   ========================================================= */
+
+
+
+.video-card {
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow);
+}
+
+.video-card iframe,
+.video-card video {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  border: 0;
+}
+
+.video-card-content {
+  padding: 22px;
+}
+
+.video-card-content p {
+  color: var(--text-soft);
+}
+
+
+/* =========================================================
+   17. SEARCH PREVIEW
+   ========================================================= */
+
+.search-preview {
+  padding: clamp(35px, 6vw, 70px);
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent-soft),
+      var(--bg-soft)
+    );
+
+  text-align: center;
+}
+
+.search-preview p {
+  color: var(--text-soft);
+}
+
+.search-preview-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   18. PAGE HERO
+   ========================================================= */
+
+.page-hero {
+  padding-top: 80px;
+  padding-bottom: 45px;
+}
+
+.page-hero .section-head {
+  max-width: 800px;
+}
+
+
+/* =========================================================
+   19. POETRY SEARCH
+   ========================================================= */
+
+.poetry-search-section {
+  padding-bottom: 45px;
+}
+
+.poetry-search-panel {
+  padding: clamp(25px, 4vw, 40px);
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow);
+}
+
+.search-heading {
+  margin-bottom: 25px;
+}
+
+.poetry-search label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--text-soft);
+
+  font-size: 0.9rem;
+}
+
+.search-input-wrap {
+  position: relative;
+}
+
+.search-input-wrap input {
+  width: 100%;
+
+  min-height: 54px;
+
+  padding: 12px 48px;
+
+  border: 1px solid var(--border);
+  border-radius: 28px;
+
+  outline: none;
+
+  background: var(--bg);
+  color: var(--text);
+
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background-color var(--transition);
+}
+
+.search-input-wrap input:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 4px var(--accent-soft);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+
+  transform: translateY(-50%);
+
+  color: var(--accent);
+}
+
+.search-clear {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+
+  width: 32px;
+  height: 32px;
+
+  transform: translateY(-50%);
+
+  border: 0;
+  border-radius: 50%;
+
+  background: var(--accent-soft);
+  color: var(--accent);
+
+  line-height: 1;
+}
+
+.poetry-filters,
+.poetry-tags-filter {
+  margin-top: 25px;
+}
+
+.filter-label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: var(--text-soft);
+
+  font-size: 0.9rem;
+}
+
+.filter-buttons,
+.filter-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.filter-button,
+.filter-tag {
+  padding: 8px 15px;
+
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  background: transparent;
+  color: var(--text-soft);
+
+  transition:
+    color var(--transition),
+    background-color var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.filter-button:hover,
+.filter-tag:hover {
+  transform: translateY(-1px);
+
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-button.active,
+.filter-tag.active {
+  border-color: var(--accent);
+
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Улюблене — акцентна кнопка-фільтр (рожево-червона, як сердечка) */
+.filter-button-favorites {
+  border-color: rgba(196, 63, 91, 0.35);
+  color: #c43f5b;
+}
+
+.filter-button-favorites:hover {
+  border-color: #c43f5b;
+  color: #c43f5b;
+}
+
+.filter-button-favorites.active {
+  border-color: #c43f5b;
+
+  background: #c43f5b;
+  color: #fff;
+}
+
+
+/*
+   Хмара хештегів, яку можна згорнути/розгорнути —
+   однаково працює і на мобільній, і на звичайній версії.
+*/
+
+.tag-cloud {
+  position: relative;
+}
+
+.tag-cloud-collapsed {
+  max-height: 92px;
+  overflow: hidden;
+}
+
+.tag-cloud-collapsed::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 36px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--bg) 85%
+  );
+
+  pointer-events: none;
+}
+
+.tag-cloud-toggle {
+  display: inline-flex;
+
+  margin-top: 10px;
+
+  border: none;
+  background: none;
+
+  color: var(--accent);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: opacity var(--transition);
+}
+
+.tag-cloud-toggle:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   20. POETRY RESULTS
+   ========================================================= */
+
+.poetry-results-section {
+  padding-top: 45px;
+  padding-bottom: 80px;
+}
+
+.results-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+.results-count {
+  color: var(--text-soft);
+}
+
+.poetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.poetry-card {
+  min-height: 350px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 27px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow);
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.poetry-card:hover,
+.poetry-card:focus-visible {
+  transform: translateY(-5px);
+
+  border-color: var(--accent);
+
+  box-shadow: var(--shadow-hover);
+}
+
+.poetry-card-category {
+  margin-bottom: 8px;
+
+  color: var(--accent);
+
+  font-family: "Caveat", cursive;
+  font-size: 1.2rem;
+}
+
+.poetry-card h3 {
+  margin-bottom: 14px;
+}
+
+.poetry-card-text {
+  display: -webkit-box;
+  overflow: hidden;
+
+  color: var(--text-soft);
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+}
+
+.poetry-card-footer {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: auto;
+}
+
+.poetry-card-tags {
+  margin-top: 18px;
+}
+
+.poetry-card-link {
+  align-self: flex-start;
+
+  margin-top: 18px;
+
+  color: var(--accent);
+
+  font-weight: 700;
+}
+
+.poetry-empty {
+  padding: 60px 20px;
+
+  text-align: center;
+}
+
+.empty-icon {
+  margin-bottom: 10px;
+
+  color: var(--accent);
+
+  font-size: 2rem;
+}
+
+
+/* =========================================================
+   21. POETRY NOTE
+   ========================================================= */
+
+.poetry-note-section {
+  padding-bottom: 90px;
+}
+
+.poetry-note {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+
+  gap: 25px;
+
+  padding: 35px;
+
+  border-radius: var(--radius);
+
+  background: var(--bg-soft);
+}
+
+.poetry-note-mark {
+  color: var(--accent);
+
+  font-family: "Caveat", cursive;
+  font-size: 3rem;
+}
+
+
+/* =========================================================
+   22. PROSE
+   ========================================================= */
+
+.prose-grid,
+.proza-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 22px;
+}
+
+.prose-card,
+.proza-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 350px;
+
+  padding: 27px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition),
+    background-color var(--transition);
+}
+
+.prose-card:hover,
+.proza-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--accent);
+
+  box-shadow: var(--shadow-hover);
+}
+
+.prose-card p,
+.proza-card p {
+  color: var(--text-soft);
+}
+
+.prose-card .card-link,
+.proza-card .card-link {
+  margin-top: 15px;
+}
+
+
+/*
+   Категорія над заголовком —
+   той самий вигляд, що й на сторінці поезії.
+*/
+
+.prose-card-category {
+  margin-bottom: 8px;
+
+  color: var(--accent);
+
+  font-family: "Caveat", cursive;
+  font-size: 1.2rem;
+}
+
+.prose-card-series {
+  margin-bottom: 6px;
+
+  color: var(--accent-dark, var(--accent));
+
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.prose-card h3 {
+  margin-bottom: 14px;
+}
+
+.prose-card h3:has(+ .prose-card-subtitle) {
+  margin-bottom: 4px;
+}
+
+.prose-card-subtitle {
+  margin-bottom: 14px;
+
+  color: var(--text-soft);
+
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.prose-card-description {
+  margin-top: 14px;
+  padding-top: 10px;
+
+  border-top: 1px solid var(--border-color, var(--border));
+
+  color: var(--text-soft);
+
+  font-style: italic;
+}
+
+
+/*
+   Текст оповідання: короткий уривок
+   та розгорнутий повний текст.
+*/
+
+.prose-card-content {
+  color: var(--text-soft);
+}
+
+.prose-card-preview {
+  color: var(--text-soft);
+}
+
+.prose-card-full p {
+  margin-bottom: 1rem;
+}
+
+.prose-card-full p:last-child {
+  margin-bottom: 0;
+}
+
+
+/*
+   Хештеги — той самий стиль "пігулки",
+   що й на сторінці поезії.
+*/
+
+.prose-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 18px;
+}
+
+.prose-card-tag {
+  display: inline-flex;
+
+  padding: 4px 10px;
+
+  border-radius: 20px;
+
+  background: var(--accent-soft);
+  color: var(--accent);
+
+  font-size: 0.82rem;
+}
+
+
+/*
+   Кнопка "Читати повністю" —
+   як посилання .poetry-card-link.
+*/
+
+.prose-card-expand {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  align-self: flex-start;
+
+  margin-top: 18px;
+  padding: 0;
+
+  border: none;
+  background: none;
+
+  color: var(--accent);
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+
+  transition: gap var(--transition);
+}
+
+.prose-card-expand:hover {
+  gap: 10px;
+
+  color: var(--accent-dark);
+}
+
+.prose-expand-icon {
+  font-size: 0.9em;
+  line-height: 1;
+}
+
+
+/* =========================================================
+   23. ABOUT
+   ========================================================= */
+
+.about-grid,
+.about-row {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+
+  align-items: center;
+
+  gap: clamp(40px, 7vw, 90px);
+}
+
+.about-image img {
+  width: 100%;
+
+  border-radius: 25px;
+
+  box-shadow: var(--shadow);
+}
+
+.about-text p {
+  color: var(--text-soft);
+}
+
+.about-quote {
+  margin-top: 25px;
+  padding: 25px;
+
+  border-left: 3px solid var(--accent);
+
+  background: var(--bg-soft);
+
+  font-family: "Literata", Georgia, serif;
+  font-style: italic;
+}
+
+
+/* =========================================================
+   24. BOOK PAGE
+   ========================================================= */
+
+.books-grid,
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 25px;
+}
+
+/* books-list — вертикальний список карток (сторінка knygy.html) */
+.books-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+.book-card {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.65fr) minmax(0, 1fr);
+
+  gap: 25px;
+
+  padding: 24px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--accent);
+
+  box-shadow: var(--shadow-hover);
+}
+
+.book-card-image,
+.book-cover {
+  overflow: hidden;
+
+  border-radius: 14px;
+
+  background: var(--bg-soft);
+}
+
+.book-card-image img,
+.book-cover img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 230px;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.book-card:hover .book-card-image img,
+.book-card:hover .book-cover img {
+  transform: scale(1.03);
+}
+
+.book-card-content,
+.book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card-content h2,
+.book-card-content h3,
+.book-info h2,
+.book-info h3 {
+  margin-bottom: 10px;
+}
+
+.book-card-content p,
+.book-info p {
+  color: var(--text-soft);
+}
+
+/* book-category — маленька позначка категорії над назвою книги */
+.book-category {
+  margin: 0 0 8px;
+
+  color: var(--accent);
+
+  font-family: "PT Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.book-description {
+  color: var(--text-soft);
+}
+
+.book-card-buy,
+.book-actions {
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+
+/*
+   Кнопка покупки.
+   Вона навмисно помітніша за звичайні посилання.
+*/
+
+.book-buy,
+.buy-button,
+.book-card-buy a,
+.book-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 46px;
+
+  padding: 10px 22px;
+
+  border: 1px solid var(--accent);
+  border-radius: 26px;
+
+  background: var(--accent);
+  color: #fff;
+
+  font-weight: 700;
+
+  box-shadow: 0 7px 22px rgba(155, 79, 73, 0.18);
+
+  transition:
+    transform var(--transition),
+    background-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.book-buy:hover,
+.buy-button:hover,
+.book-card-buy a:hover,
+.book-button:hover {
+  transform: translateY(-2px);
+
+  background: var(--accent-dark);
+
+  box-shadow: 0 11px 28px rgba(155, 79, 73, 0.25);
+}
+
+
+/* =========================================================
+   25. CONTACTS
+   ========================================================= */
+
+.contacts-grid,
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 30px;
+}
+
+.contact-card,
+.contacts-card {
+  padding: 30px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+
+  background: var(--bg-card);
+
+  box-shadow: var(--shadow);
+}
+
+.contact-list {
+  display: grid;
+
+  gap: 18px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.contact-list a {
+  color: var(--accent);
+
+  transition: color var(--transition);
+}
+
+.contact-list a:hover {
+  color: var(--accent-dark);
+}
+
+.contact-form {
+  display: grid;
+
+  gap: 17px;
+}
+
+.contact-form label {
+  display: grid;
+
+  gap: 7px;
+
+  color: var(--text-soft);
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+  width: 100%;
+
+  padding: 12px 15px;
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  outline: none;
+
+  background: var(--bg);
+  color: var(--text);
+
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+  border-color: var(--accent);
+
+  box-shadow:
+    0 0 0 4px var(--accent-soft);
+}
+
+.contact-form textarea {
+  min-height: 170px;
+
+  resize: vertical;
+}
+
+
+/* =========================================================
+   26. MODAL
+   ========================================================= */
+
+.poem-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+
+  display: grid;
+  place-items: center;
+
+  padding: 20px;
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.poem-modal.is-visible {
+  opacity: 1;
+}
+
+.poem-modal-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(20, 16, 14, 0.72);
+
+  backdrop-filter: blur(5px);
+}
+
+.poem-modal-dialog {
+  position: relative;
+  z-index: 1;
+
+  width: min(800px, 100%);
+  max-height: min(850px, 90vh);
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: clamp(28px, 5vw, 55px);
+
+  border: 1px solid var(--border);
+
+  border-radius: 24px;
+
+  background: var(--bg-card);
+
+  box-shadow: 0 30px 100px rgba(0,0,0,0.35);
+
+  transform: translateY(20px) scale(0.98);
+
+  transition: transform 0.3s ease;
+}
+
+.poem-modal.is-visible .poem-modal-dialog {
+  transform: translateY(0) scale(1);
+}
+
+.poem-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: var(--bg-soft);
+  color: var(--text);
+
+  font-size: 1.5rem;
+
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+.poem-modal-close:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.poem-modal-text {
+  white-space: pre-line;
+
+  margin-top: 25px;
+
+  font-family: "Literata", Georgia, serif;
+
+  line-height: 2;
+}
+
+
+/* =========================================================
+   27. REVEAL ANIMATION
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(22px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   28. FOOTER
+   ========================================================= */
+
+footer {
+  margin-top: 40px;
+
+  padding: 60px 0 35px;
+
+  background: var(--footer-bg);
+  color: #eee;
+
+  transition:
+    background-color var(--transition);
+}
+
+.footer-quote {
+  margin-bottom: 35px;
+
+  color: #e8d5c7;
+
+  font-family: "Caveat", cursive;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+}
+
+.footer-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.footer-nav ul {
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  display: block;
+
+  padding: 7px 10px;
+
+  color: #cfc4bc;
+
+  transition: color var(--transition);
+}
+
+.footer-nav a:hover {
+  color: #fff;
+}
+
+.footer-fine {
+  margin-top: 20px;
+
+  color: #91877f;
+
+  font-size: 0.85rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-social a {
+  color: #cfc4bc;
+
+  transition: color var(--transition);
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+
+/* =========================================================
+   29. SCROLL TO TOP
+   ========================================================= */
+
+#toTop {
+  position: fixed;
+  right: 22px;
+  bottom: 80px;
+  z-index: 900;
+
+  width: 46px;
+  height: 46px;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: var(--accent);
+  color: #fff;
+
+  box-shadow: var(--shadow);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(10px);
+
+  transition:
+    opacity var(--transition),
+    visibility var(--transition),
+    transform var(--transition);
+}
+
+#toTop.show {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0);
+}
+
+#toTop:hover {
+  background: var(--accent-dark);
+}
+
+
+/* =========================================================
+   30. LOADING
+   ========================================================= */
+
+.poetry-loading {
+  grid-column: 1 / -1;
+
+  padding: 60px 20px;
+
+  text-align: center;
+
+  color: var(--text-soft);
+}
+
+.loading-mark {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--accent);
+
+  font-size: 2rem;
+
+  animation: loadingRotate 2s linear infinite;
+}
+
+@keyframes loadingRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   31. RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .main-nav a {
+    padding-inline: 7px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 0.75fr;
+    gap: 45px;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .poetry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .books-grid,
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   32. RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+
+  html {
+    scroll-padding-top: 75px;
   }
 
   body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--body);
-    font-size: 17px;
-    line-height: 1.65;
-    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
   }
 
-  a { color: inherit; }
-  img { max-width: 100%; display: block; }
-
-  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
-
-  /* ---------- Vyshyvanka cross-stitch signature divider ---------- */
-  .stitch-divider {
-    width: 100%;
-    height: 14px;
-    background-image:
-      repeating-linear-gradient(45deg, var(--kalyna) 0 3px, transparent 3px 16px),
-      repeating-linear-gradient(-45deg, var(--vyshyvanka) 0 3px, transparent 3px 16px);
-    background-position: 0 0, 8px 0;
-    background-size: 16px 14px;
-    opacity: 0.9;
+  .wrap {
+    width: min(
+      calc(100% - 28px),
+      var(--content-width)
+    );
   }
-  .stitch-divider.thin { height: 8px; background-size: 12px 8px; }
 
-  /* ---------- Header / nav ---------- */
-  header.site-header {
+
+  /* HEADER */
+
+  .site-header {
     position: sticky;
-    top: 0;
-    z-index: 40;
-    background: rgba(246, 241, 230, 0.92);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--line);
   }
+
   .nav-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 0;
+    min-height: 70px;
   }
-  .brand {
-    font-family: var(--display);
-    font-weight: 600;
+
+  .brand-name {
     font-size: 1.15rem;
-    letter-spacing: 0.01em;
-    text-decoration: none;
-    color: var(--ink);
   }
+
   .brand small {
-    display: block;
-    font-family: var(--body);
-    font-weight: 400;
     font-size: 0.68rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-    margin-top: 2px;
-  }
-  nav.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-  }
-  nav.main-nav a {
-    text-decoration: none;
-    font-size: 0.95rem;
-    color: var(--ink-soft);
-    position: relative;
-    padding-bottom: 3px;
-    transition: color 0.2s ease;
-  }
-  nav.main-nav a.active { color: var(--kalyna-deep); font-weight: 700; }
-  nav.main-nav a:hover { color: var(--kalyna-deep); }
-  nav.main-nav a:focus-visible, .brand:focus-visible, .btn:focus-visible, .card:focus-visible {
-    outline: 2px solid var(--vyshyvanka);
-    outline-offset: 3px;
-  }
-  .nav-toggle { display: none; }
-
-  @media (max-width: 720px) {
-    nav.main-nav { display: none; }
   }
 
-  /* ---------- Hero ---------- */
-  .hero {
-    padding: 76px 0 64px;
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-area {
+    gap: 8px;
+  }
+
+  .main-nav {
+    position: absolute;
+
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+
+    padding: 10px 14px 18px;
+
+    background: var(--header-bg);
+
+    border-bottom: 1px solid var(--border);
+
+    box-shadow: var(--shadow);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+      opacity var(--transition),
+      visibility var(--transition),
+      transform var(--transition);
+  }
+
+  .main-nav.is-open {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+
+  .main-nav ul {
     display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 56px;
-    align-items: center;
+
+    gap: 2px;
   }
-  .hero-eyebrow {
-    font-family: var(--body);
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-size: 0.74rem;
-    color: var(--kalyna-deep);
-    font-weight: 700;
-    margin: 0 0 18px;
+
+  .main-nav a {
+    padding: 13px 14px;
+
+    border-radius: 10px;
   }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .main-nav a:hover,
+  .main-nav a.active {
+    background: var(--accent-soft);
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    padding-top: 50px;
+    padding-bottom: 55px;
+
+    gap: 45px;
+  }
+
   .hero h1 {
-    font-family: var(--hand);
-    font-weight: 600;
-    font-size: clamp(2.6rem, 5vw, 4.1rem);
-    line-height: 1.12;
-    margin: 0 0 22px;
-    color: var(--ink);
+    font-size: clamp(2.5rem, 12vw, 4rem);
   }
-  .hero h1 .accent { color: var(--kalyna); }
-  .hero-lede {
-    font-family: var(--display);
-    font-size: 1.15rem;
-    color: var(--ink-soft);
-    max-width: 46ch;
-    margin: 0 0 32px;
+
+  .hero-actions {
+    display: grid;
   }
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--vyshyvanka);
-    color: var(--paper);
-    text-decoration: none;
-    padding: 13px 26px;
-    border-radius: var(--radius);
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 0.01em;
-    transition: transform 0.18s ease, background 0.18s ease;
+
+  .hero-actions .btn {
+    width: 100%;
   }
-  .btn:hover { background: var(--kalyna-deep); transform: translateX(2px); }
-  .btn.ghost {
-    background: transparent;
-    color: var(--vyshyvanka);
-    border: 1.5px solid var(--vyshyvanka);
-  }
-  .btn.ghost:hover { background: var(--vyshyvanka); color: var(--paper); }
 
   .hero-portrait {
-    position: relative;
+    order: -1;
   }
+
   .portrait-frame {
-    position: relative;
-    aspect-ratio: 1 / 1;
-    border-radius: 50% 50% 48% 52% / 52% 48% 52% 48%;
-    overflow: hidden;
-    border: 3px solid var(--paper);
-    box-shadow: 0 0 0 2px var(--kalyna), 0 24px 48px -20px rgba(42,33,27,0.45);
-  }
-  .portrait-frame img {
-    width: 100%; height: 100%; object-fit: cover;
-  }
-  .portrait-tag {
-    position: absolute;
-    bottom: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--kalyna);
-    color: var(--paper);
-    font-family: var(--hand);
-    font-size: 1.15rem;
-    padding: 6px 22px;
-    border-radius: 999px;
-    white-space: nowrap;
-    box-shadow: 0 8px 18px -8px rgba(0,0,0,0.4);
+    width: min(82vw, 390px);
   }
 
-  @media (max-width: 860px) {
-    .hero { grid-template-columns: 1fr; padding-top: 44px; }
-    .hero-portrait { max-width: 320px; margin: 0 auto; order: -1; }
+
+  /* SECTIONS */
+
+  .section-creativity,
+  .books-section,
+  .video-preview-section,
+  .search-preview-section,
+  .featured-poem-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
-  /* ---------- Reveal on scroll ---------- */
-  .reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.in-view { opacity: 1; transform: translateY(0); }
-
-  /* ---------- Section shell ---------- */
-  section { padding: 72px 0; }
   .section-head {
-    max-width: 60ch;
-    margin: 0 0 44px;
+    margin-bottom: 2rem;
   }
-  .section-eyebrow {
-    font-size: 0.74rem;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-weight: 700;
-    color: var(--kalyna-deep);
-    margin: 0 0 10px;
-  }
-  .section-head h2 {
-    font-family: var(--display);
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    margin: 0 0 12px;
-    color: var(--ink);
-  }
-  .section-head p { color: var(--ink-soft); margin: 0; }
 
-  /* ---------- Creativity cards ---------- */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+
+  /* CARDS */
+
+  .card-grid,
+  .poetry-grid,
+  .prose-grid,
+  .proza-grid {
+    grid-template-columns: 1fr;
   }
-  @media (max-width: 860px) { .card-grid { grid-template-columns: 1fr; } }
 
   .card {
-    background: var(--paper-warm);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 30px 26px 26px;
-    text-decoration: none;
-    color: var(--ink);
-    display: block;
-    position: relative;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 34px -22px rgba(42,33,27,0.35);
-  }
-  .card .stitch-divider { margin-bottom: 18px; }
-  .card h3 {
-    font-family: var(--display);
-    font-size: 1.28rem;
-    margin: 0 0 10px;
-  }
-  .card p {
-    color: var(--ink-soft);
-    font-size: 0.96rem;
-    margin: 0 0 18px;
-  }
-  .card .card-link {
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: var(--kalyna-deep);
+    min-height: 240px;
   }
 
-  /* ---------- Featured poem ---------- */
+
+  /* POEM */
+
   .poem-panel {
-    background: var(--vyshyvanka);
-    color: var(--paper);
-    border-radius: var(--radius);
-    padding: 52px 48px;
-    position: relative;
-    overflow: hidden;
+    padding: 32px 24px;
+    border-radius: 20px;
   }
-  .poem-panel::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: repeating-linear-gradient(45deg, rgba(255,255,255,0.045) 0 2px, transparent 2px 14px);
-    pointer-events: none;
-  }
-  .poem-eyebrow {
-    font-size: 0.74rem;
-    text-transform: uppercase;
-    letter-spacing: 0.18em;
-    font-weight: 700;
-    color: var(--gold);
-    margin: 0 0 18px;
-  }
-  .poem-title {
-    font-family: var(--display);
-    font-size: 1.4rem;
-    margin: 0 0 22px;
-    color: #fff;
-  }
+
   .poem-text {
-    font-family: var(--hand);
-    font-size: 1.65rem;
-    line-height: 1.5;
-    color: #F3EAD6;
-    margin: 0 0 26px;
-    max-width: 62ch;
-  }
-  .poem-tags {
-    display: flex; flex-wrap: wrap; gap: 10px;
-  }
-  .tag {
-    font-size: 0.82rem;
-    background: rgba(255,255,255,0.12);
-    border: 1px solid rgba(255,255,255,0.28);
-    color: #F3EAD6;
-    padding: 5px 13px;
-    border-radius: 999px;
+    font-size: 1rem;
   }
 
-  /* ---------- Books ---------- */
+
+  /* BOOKS */
+
   .books-row {
-    display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 48px;
-    align-items: center;
+    grid-template-columns: 1fr;
+
+    gap: 45px;
   }
-  @media (max-width: 860px) { .books-row { grid-template-columns: 1fr; } }
+
   .books-photo {
-    border-radius: var(--radius);
-    overflow: hidden;
-    border: 1px solid var(--line);
+    max-width: 390px;
   }
-  .book-list {
-    list-style: none;
-    margin: 0 0 28px;
-    padding: 0;
-    display: grid;
-    gap: 14px;
-  }
-  .book-list li {
-    display: flex;
-    gap: 14px;
-    align-items: baseline;
-    padding-bottom: 14px;
-    border-bottom: 1px dashed var(--line);
-  }
-  .book-list li:last-child { border-bottom: none; }
-  .book-num {
-    font-family: var(--display);
-    font-weight: 700;
-    color: var(--kalyna);
-    font-size: 0.95rem;
-    min-width: 22px;
-  }
-  .book-list h4 { margin: 0 0 4px; font-family: var(--display); font-size: 1.05rem; }
-  .book-list span { color: var(--ink-soft); font-size: 0.92rem; }
 
-  /* ---------- Footer ---------- */
+  .book-card {
+    grid-template-columns: 110px 1fr;
+
+    gap: 18px;
+
+    padding: 18px;
+  }
+
+  .book-card-image img,
+  .book-cover img {
+    min-height: 160px;
+  }
+
+
+  /* VIDEO */
+
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .video-preview-content {
+    align-items: flex-start;
+  }
+
+
+  /* PAGE */
+
+  .page-hero {
+    padding-top: 55px;
+    padding-bottom: 30px;
+  }
+
+
+  /* SEARCH */
+
+  .poetry-search-panel {
+    padding: 22px 18px;
+  }
+
+  .filter-buttons,
+  .filter-tags {
+    gap: 6px;
+  }
+
+  .filter-button,
+  .filter-tag {
+    padding: 7px 11px;
+
+    font-size: 0.9rem;
+  }
+
+
+  /* RESULTS */
+
+  .results-header {
+    display: block;
+  }
+
+  .results-count {
+    margin-top: 8px;
+  }
+
+
+  /* NOTE */
+
+  .poetry-note {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding: 25px;
+  }
+
+
+  /* ABOUT */
+
+  .about-grid,
+  .about-row,
+  .contacts-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+
+  /* FOOTER */
+
   footer {
-    background: var(--ink);
-    color: var(--paper-warm);
-    padding: 56px 0 28px;
+    padding-top: 45px;
   }
-  .footer-quote {
-    font-family: var(--hand);
-    font-size: 1.7rem;
-    color: var(--gold);
-    max-width: 40ch;
-    margin: 0 0 30px;
-  }
-  .footer-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    gap: 24px;
-    padding-top: 26px;
-    border-top: 1px solid rgba(246,241,230,0.15);
-  }
-  .footer-nav ul {
-    list-style: none; display: flex; gap: 22px; margin: 0 0 12px; padding: 0; flex-wrap: wrap;
-  }
-  .footer-nav a { text-decoration: none; color: var(--paper-warm); opacity: 0.85; font-size: 0.92rem; }
-  .footer-nav a:hover { opacity: 1; color: var(--gold); }
-  .footer-social { display: flex; gap: 16px; }
-  .footer-social a {
-    text-decoration: none;
-    color: var(--paper);
-    border: 1px solid rgba(246,241,230,0.3);
-    padding: 8px 16px;
-    border-radius: 999px;
-    font-size: 0.86rem;
-  }
-  .footer-social a:hover { background: var(--kalyna); border-color: var(--kalyna); }
-  .footer-fine { font-size: 0.8rem; opacity: 0.55; margin-top: 22px; }
 
-  /* ---------- Scroll to top ---------- */
-  #toTop {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--kalyna);
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 24px -8px rgba(0,0,0,0.5);
-    opacity: 0;
-    transform: translateY(12px);
-    pointer-events: none;
-    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
-    z-index: 50;
+  .footer-row {
+    display: grid;
+
+    gap: 25px;
   }
-  #toTop.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
-  #toTop:hover { background: var(--vyshyvanka); }
+
+  .footer-nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-social {
+    padding-top: 5px;
+  }
+
+
+  /* TOP */
+
+  #toTop {
+    right: 14px;
+    bottom: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   33. VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .wrap {
+    width: min(
+      calc(100% - 22px),
+      var(--content-width)
+    );
+  }
+
+  h2 {
+    font-size: 1.85rem;
+  }
+
+  .hero {
+    padding-top: 35px;
+  }
+
+  .hero h1 {
+    font-size: 2.65rem;
+  }
+
+  .hero-lede {
+    font-size: 1rem;
+  }
+
+  .portrait-frame {
+    width: 86vw;
+  }
+
+  .book-card {
+    grid-template-columns: 1fr;
+  }
+
+  .book-card-image,
+  .book-cover {
+    max-width: 210px;
+  }
+
+  .book-card-buy,
+  .book-actions {
+    padding-top: 15px;
+  }
+
+  .book-buy,
+  .buy-button,
+  .book-card-buy a,
+  .book-button {
+    width: 100%;
+  }
+
+  .poetry-card {
+    min-height: auto;
+
+    padding: 23px;
+  }
+
+  .poem-modal {
+    padding: 10px;
+  }
+
+  .poem-modal-dialog {
+    max-height: 94vh;
+
+    padding: 28px 20px;
+  }
+
+}
+
+
+/* =========================================================
+   34. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   35. PRINT
+   ========================================================= */
+
+@media print {
+
+  .site-header,
+  .theme-toggle,
+  .nav-toggle,
+  #toTop,
+  footer,
+  .hero-actions,
+  .book-buy,
+  .buy-button {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .wrap {
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   CONTACTS PAGE
+   ========================================================= */
+
+.contacts-section {
+  padding: 20px 0 80px;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.contact-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
+  padding: 34px 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent);
+  opacity: 0.75;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* contact-card-content — обгортка навколо тексту картки контакту */
+.contact-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* contact-card-email — акцентна перша картка (пошта) */
+.contact-card-email {
+  border-color: var(--accent);
+}
+
+.contact-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 24px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: "Caveat", cursive;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.contact-card-label {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-family: "PT Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-card h2 {
+  margin: 0 0 14px;
+  font-family: "Literata", serif;
+  font-size: 25px;
+  line-height: 1.25;
+  color: var(--heading-color);
+}
+
+.contact-card p:not(.contact-card-label) {
+  margin: 0 0 22px;
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.contact-email,
+.contact-social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  color: var(--accent);
+  font-family: "PT Sans", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.contact-email:hover,
+.contact-social-link:hover {
+  color: var(--accent-dark, var(--accent));
+  gap: 12px;
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   CONTACTS NOTE
+   ========================================================= */
+
+.contacts-note {
+  padding: 0 0 90px;
+}
+
+.contacts-note-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 38px 42px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: var(--accent-soft);
+}
+
+.contacts-note-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  color: var(--accent);
+  font-family: "Caveat", cursive;
+  font-size: 34px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow);
+}
+
+.contacts-note-inner .section-eyebrow {
+  margin-bottom: 8px;
+}
+
+.contacts-note-inner h2 {
+  margin: 0 0 12px;
+  font-family: "Literata", serif;
+  font-size: 27px;
+  line-height: 1.35;
+  color: var(--heading-color);
+}
+
+.contacts-note-inner > div:last-child p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CONTACTS — DARK THEME
+   ========================================================= */
+
+[data-theme="dark"] .contact-card {
+  background: var(--card-bg);
+}
+
+[data-theme="dark"] .contacts-note-inner {
+  background: var(--accent-soft);
+}
+
+
+/* =========================================================
+   CONTACTS — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .contact-card {
+    min-height: auto;
+  }
+
+}
+
+
+/* =========================================================
+   CONTACTS — MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .contacts-section {
+    padding-bottom: 60px;
+  }
+
+  .contact-card {
+    padding: 28px 24px;
+    border-radius: 16px;
+  }
+
+  .contact-card h2 {
+    font-size: 23px;
+  }
+
+  .contacts-note {
+    padding-bottom: 65px;
+  }
+
+  .contacts-note-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 30px 24px;
+    border-radius: 16px;
+  }
+
+  .contacts-note-mark {
+    width: 56px;
+    height: 56px;
+    font-size: 29px;
+  }
+
+  .contacts-note-inner h2 {
+    font-size: 23px;
+  }
+
+}
+
+
+/* =========================================================
+   PRO-MENE.HTML
+   СТОРІНКА «ПРО МЕНЕ»
+   ========================================================= */
+
+
+/* =========================================================
+   AUTHOR INTRO
+   ========================================================= */
+
+.about-author-section {
+  padding: 20px 0 90px;
+}
+
+.about-author-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+  gap: 70px;
+  align-items: center;
+}
+
+
+/* =========================================================
+   AUTHOR PHOTO
+   ========================================================= */
+
+.about-author-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.about-author-photo-frame {
+  position: relative;
+  width: min(100%, 390px);
+  padding: 12px;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #d8c8b8);
+  box-shadow:
+    0 18px 45px rgba(74, 45, 34, 0.12);
+}
+
+.about-author-photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(107, 48, 56, 0.22);
+  pointer-events: none;
+}
+
+.about-author-photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+
+
+.about-author-content {
+  max-width: 720px;
+}
+
+.about-author-content h2 {
+  margin: 0 0 26px;
+}
+
+.about-author-content p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.about-author-content strong {
+  color: var(--accent, #6b3038);
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   AUTHOR SIGNATURE
+   ========================================================= */
+
+.about-author-signature {
+  margin-top: 28px;
+  color: var(--accent, #6b3038);
+  font-family: "Caveat", cursive;
+  font-size: 34px;
+  font-weight: 600;
+  transform: rotate(-2deg);
+}
+
+
+/* =========================================================
+   STORY / BIOGRAPHY
+   ========================================================= */
+
+.about-story-section {
+  padding: 85px 0;
+  background:
+    var(--section-soft, #f5efe8);
+}
+
+.about-story {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 32px;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 52px 60px;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #d8c8b8);
+  box-shadow:
+    0 15px 45px rgba(74, 45, 34, 0.07);
+}
+
+.about-story-mark {
+  color: var(--accent, #6b3038);
+  font-family: "Caveat", cursive;
+  font-size: 58px;
+  line-height: 1;
+  text-align: center;
+}
+
+.about-story h2 {
+  margin: 0 0 25px;
+}
+
+.about-story p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.about-story p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   CREATIVE DIRECTIONS
+   ========================================================= */
+
+.about-directions-section {
+  padding: 95px 0;
+}
+
+.about-directions-section .section-head {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.about-directions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.about-direction-card {
+  position: relative;
+  padding: 38px 32px 34px;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #d8c8b8);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.about-direction-card::after {
+  content: "";
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 0;
+  height: 3px;
+  background: var(--accent, #6b3038);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.about-direction-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(107, 48, 56, 0.35);
+  box-shadow:
+    0 18px 40px rgba(74, 45, 34, 0.10);
+}
+
+.about-direction-card:hover::after {
+  transform: scaleX(1);
+}
+
+.about-direction-icon {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--accent, #6b3038);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.about-direction-card h3 {
+  margin: 0 0 14px;
+  font-family: "Literata", serif;
+  font-size: 23px;
+  font-weight: 600;
+}
+
+.about-direction-card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PUBLICATIONS
+   ========================================================= */
+
+.about-publications-section {
+  padding: 95px 0;
+  background:
+    var(--section-soft, #f5efe8);
+}
+
+.about-publications-section .section-head {
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+
+.publication-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.publication-card {
+  position: relative;
+  min-height: 230px;
+  padding: 34px 30px;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #d8c8b8);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 18px 40px rgba(74, 45, 34, 0.09);
+}
+
+.publication-number {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  color: rgba(107, 48, 56, 0.12);
+  font-family: "Literata", serif;
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.publication-card h3 {
+  position: relative;
+  margin: 20px 0 15px;
+  font-size: 23px;
+}
+
+.publication-card p {
+  position: relative;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   ONLINE WORKS
+   ========================================================= */
+
+.about-online-section {
+  padding: 95px 0;
+}
+
+.about-online {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 35px;
+  align-items: start;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 50px 60px;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #d8c8b8);
+  box-shadow:
+    0 15px 45px rgba(74, 45, 34, 0.07);
+}
+
+.about-online-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  color: var(--accent, #6b3038);
+  border: 1px solid rgba(107, 48, 56, 0.28);
+  font-size: 28px;
+}
+
+.about-online-content {
+  max-width: 760px;
+}
+
+.about-online-content h2 {
+  margin: 0 0 22px;
+}
+
+.about-online-content p {
+  margin: 0 0 18px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.about-online-content .btn {
+  display: inline-flex;
+  margin-top: 10px;
+}
+
+
+/* =========================================================
+   COOPERATION
+   ========================================================= */
+
+.about-cooperation-section {
+  padding: 95px 0;
+  background:
+    var(--section-soft, #f5efe8);
+}
+
+.about-cooperation-section .section-head {
+  max-width: 820px;
+  margin-bottom: 48px;
+}
+
+.cooperation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.cooperation-card {
+  position: relative;
+  display: block;
+  min-height: 235px;
+  padding: 32px 30px 38px;
+  color: inherit;
+  text-decoration: none;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #d8c8b8);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.cooperation-card:hover {
+  color: inherit;
+  text-decoration: none;
+  transform: translateY(-5px);
+  border-color: rgba(107, 48, 56, 0.35);
+  box-shadow:
+    0 18px 42px rgba(74, 45, 34, 0.10);
+}
+
+.cooperation-label {
+  display: inline-block;
+  margin-bottom: 18px;
+  color: var(--accent, #6b3038);
+  font-family: "PT Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cooperation-card h3 {
+  margin: 0 0 13px;
+  font-family: "Literata", serif;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.cooperation-card p {
+  margin: 0;
+  max-width: 360px;
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+.cooperation-arrow {
+  position: absolute;
+  right: 28px;
+  bottom: 23px;
+  color: var(--accent, #6b3038);
+  font-size: 23px;
+  transition: transform 0.25s ease;
+}
+
+.cooperation-card:hover .cooperation-arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   FINAL BLOCK
+   ========================================================= */
+
+.about-final-section {
+  padding: 95px 0 110px;
+}
+
+.about-final {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-final blockquote {
+  margin: 25px 0 25px;
+  color: var(--accent, #6b3038);
+  font-family: "Caveat", cursive;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.25;
+}
+
+.about-final > p:not(.section-eyebrow) {
+  max-width: 650px;
+  margin: 0 auto 28px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.about-final .btn {
+  display: inline-flex;
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+html[data-theme="dark"] .about-author-photo-frame,
+html[data-theme="dark"] .about-story,
+html[data-theme="dark"] .about-direction-card,
+html[data-theme="dark"] .publication-card,
+html[data-theme="dark"] .about-online,
+html[data-theme="dark"] .textbook-card,
+html[data-theme="dark"] .cooperation-card {
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="dark"] .about-author-photo-frame {
+  background: var(--card-bg, #211d1b);
+}
+
+html[data-theme="dark"] .about-story-section,
+html[data-theme="dark"] .about-publications-section,
+html[data-theme="dark"] .about-cooperation-section {
+  background:
+    var(--section-soft, #191716);
+}
+
+html[data-theme="dark"] .about-direction-card:hover,
+html[data-theme="dark"] .publication-card:hover,
+html[data-theme="dark"] .textbook-card:hover,
+html[data-theme="dark"] .cooperation-card:hover {
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.30);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+
+  .about-author-grid {
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 45px;
+  }
+
+  .about-directions-grid,
+  .publication-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cooperation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-story {
+    padding: 42px 45px;
+  }
+
+  .about-online {
+    padding: 42px 45px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 720px) {
+
+  .about-author-section,
+  .about-directions-section,
+  .about-publications-section,
+  .about-online-section,
+  .about-cooperation-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+
+  /* Автор */
+
+  .about-author-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-author-photo-frame {
+    width: min(100%, 330px);
+  }
+
+  .about-author-content {
+    text-align: left;
+  }
+
+  .about-author-content p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .about-author-signature {
+    font-size: 31px;
+  }
+
+
+  /* Біографія */
+
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 35px 25px;
+  }
+
+  .about-story-mark {
+    text-align: left;
+    font-size: 45px;
+  }
+
+  .about-story p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+
+  /* Напрямки */
+
+  .about-directions-grid,
+  .publication-grid,
+  .cooperation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-direction-card,
+  .publication-card {
+    padding: 30px 25px;
+  }
+
+
+  /* Онлайн */
+
+  .about-online {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 35px 25px;
+  }
+
+  .about-online-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .about-online-content p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+
+  /* Співпраця */
+
+  .cooperation-card {
+    min-height: 210px;
+    padding: 28px 25px 40px;
+  }
+
+
+  /* Фінальна цитата */
+
+  .about-final-section {
+    padding: 65px 0 80px;
+  }
+
+  .about-final blockquote {
+    font-size: 34px;
+  }
+
+  .about-final > p:not(.section-eyebrow) {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .about-author-photo-frame {
+    width: 100%;
+  }
+
+  .about-story {
+    padding: 30px 20px;
+  }
+
+  .about-online {
+    padding: 30px 20px;
+  }
+
+  .about-direction-card,
+  .publication-card,
+  .cooperation-card {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about-final blockquote {
+    font-size: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-direction-card,
+  .publication-card,
+  .cooperation-card,
+  .cooperation-arrow {
+    transition: none;
+  }
+
+}
+
+
+
+/* =========================================================
+   VIDEO PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   VIDEO INTRO
+   ========================================================= */
+
+.video-intro-section {
+  margin-top: 10px;
+  margin-bottom: 80px;
+}
+
+.video-intro {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 30px;
+  align-items: start;
+
+  max-width: 900px;
+  margin: 0 auto;
+
+  padding: 42px 46px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(247, 241, 233, 0.92)
+    );
+
+  border: 1px solid var(--border-color, #d8c8b8);
+
+  box-shadow:
+    0 18px 45px rgba(72, 46, 34, 0.08);
+}
+
+
+[data-theme="dark"] .video-intro {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(47, 40, 38, 0.96),
+      rgba(38, 33, 32, 0.96)
+    );
+}
+
+
+.video-intro-mark {
+  width: 72px;
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    var(--accent-color, #6b3038);
+
+  color: #fff;
+
+  font-family: "Caveat", cursive;
+  font-size: 38px;
+
+  box-shadow:
+    0 10px 25px rgba(107, 48, 56, 0.22);
+}
+
+
+.video-intro .section-eyebrow {
+  margin-bottom: 8px;
+}
+
+
+.video-intro h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+
+.video-intro p:not(.section-eyebrow) {
+  max-width: 760px;
+
+  margin-top: 0;
+  margin-bottom: 12px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   FEATURED VIDEO
+   ========================================================= */
+
+.video-featured-section {
+  margin-bottom: 105px;
+}
+
+
+.video-featured-section .section-head {
+  margin-bottom: 35px;
+}
+
+
+.video-featured {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  opacity: 0;
+  transform: translateY(18px);
+
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+
+.video-featured.video-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.video-featured-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);
+
+  background:
+    var(--card-background, #fff);
+
+  border: 1px solid var(--border-color, #d8c8b8);
+
+  box-shadow:
+    0 24px 60px rgba(72, 46, 34, 0.12);
+
+  overflow: hidden;
+}
+
+
+.video-featured-media {
+  position: relative;
+
+  display: block;
+
+  min-height: 440px;
+
+  background: #241d1b;
+
+  overflow: hidden;
+}
+
+
+.video-featured-media img {
+  width: 100%;
+  height: 100%;
+
+  min-height: 440px;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.6s ease,
+    filter 0.4s ease;
+}
+
+
+.video-featured-media:hover img {
+  transform: scale(1.035);
+  filter: brightness(0.82);
+}
+
+
+.video-featured-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 48px 44px;
+}
+
+
+.video-eyebrow,
+.video-card-type {
+  margin: 0 0 10px;
+
+  color:
+    var(--accent-color, #6b3038);
+
+  font-family:
+    "PT Sans",
+    sans-serif;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+
+.video-featured-info h3 {
+  margin: 0 0 18px;
+
+  color:
+    var(--heading-color, #292624);
+
+  font-family:
+    "Literata",
+    serif;
+
+  font-size: clamp(25px, 3vw, 36px);
+
+  line-height: 1.25;
+}
+
+
+.video-description {
+  margin: 0 0 28px;
+
+  color:
+    var(--text-color, #554d49);
+
+  line-height: 1.75;
+}
+
+
+.video-button {
+  align-self: flex-start;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+   ========================================================= */
+
+.video-play {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(107, 48, 56, 0.94);
+
+  color: #fff;
+
+  font-size: 23px;
+
+  padding-left: 4px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.video-featured-media:hover .video-play,
+.video-card-media:hover .video-play {
+  transform:
+    translate(-50%, -50%)
+    scale(1.08);
+
+  background:
+    #7b3943;
+
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   VIDEO LIST
+   ========================================================= */
+
+.video-list-section {
+  margin-bottom: 105px;
+}
+
+
+.video-list-section .section-head {
+  margin-bottom: 38px;
+}
+
+
+.video-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+/* =========================================================
+   VIDEO CARD
+   ========================================================= */
+
+.video-card {
+  overflow: hidden;
+
+  background:
+    var(--card-background, #fff);
+
+  border:
+    1px solid
+    var(--border-color, #d8c8b8);
+
+  box-shadow:
+    0 12px 35px rgba(72, 46, 34, 0.07);
+
+  opacity: 0;
+  transform: translateY(22px);
+
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.video-card.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.video-card:hover {
+  box-shadow:
+    0 20px 45px rgba(72, 46, 34, 0.13);
+
+  transform:
+    translateY(-4px);
+}
+
+
+/* =========================================================
+   VIDEO CARD MEDIA
+   ========================================================= */
+
+.video-card-media {
+  position: relative;
+
+  display: block;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  background: #241d1b;
+}
+
+
+.video-card-media img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease,
+    filter 0.4s ease;
+}
+
+
+.video-card-media:hover img {
+  transform: scale(1.04);
+  filter: brightness(0.82);
+}
+
+
+.video-card-media .video-play {
+  width: 58px;
+  height: 58px;
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   VIDEO CARD BODY
+   ========================================================= */
+
+.video-card-body {
+  padding: 25px 27px 28px;
+}
+
+
+.video-card-type {
+  margin-bottom: 9px;
+
+  font-size: 11px;
+}
+
+
+.video-card-body h3 {
+  margin: 0 0 12px;
+
+  color:
+    var(--heading-color, #292624);
+
+  font-family:
+    "Literata",
+    serif;
+
+  font-size: 21px;
+
+  line-height: 1.4;
+}
+
+
+.video-card-description {
+  margin: 0 0 20px;
+
+  color:
+    var(--text-color, #554d49);
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+.video-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color:
+    var(--accent-color, #6b3038);
+
+  font-family:
+    "PT Sans",
+    sans-serif;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+
+.video-card-link:hover {
+  color:
+    var(--accent-hover, #8a424d);
+
+  gap: 11px;
+}
+
+
+/* =========================================================
+   VIDEO NOTE
+   ========================================================= */
+
+.video-note-section {
+  margin-bottom: 100px;
+}
+
+
+.video-note {
+  display: grid;
+
+  grid-template-columns: 74px 1fr;
+
+  gap: 28px;
+
+  align-items: start;
+
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  padding: 40px 44px;
+
+  background:
+    rgba(107, 48, 56, 0.055);
+
+  border:
+    1px solid
+    rgba(107, 48, 56, 0.18);
+}
+
+
+[data-theme="dark"] .video-note {
+  background:
+    rgba(184, 112, 121, 0.08);
+
+  border-color:
+    rgba(184, 112, 121, 0.22);
+}
+
+
+.video-note-mark {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color:
+    var(--accent-color, #6b3038);
+
+  font-family:
+    "Caveat",
+    cursive;
+
+  font-size: 38px;
+
+  border:
+    1px solid
+    var(--accent-color, #6b3038);
+
+  border-radius: 50%;
+}
+
+
+.video-note h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+
+.video-note p:not(.section-eyebrow) {
+  margin-top: 0;
+
+  max-width: 720px;
+
+  line-height: 1.8;
+}
+
+
+.video-note .btn {
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY / ERROR
+   ========================================================= */
+
+.video-loading,
+.video-empty,
+.video-error {
+  width: 100%;
+
+  padding: 60px 25px;
+
+  text-align: center;
+
+  color:
+    var(--text-color, #554d49);
+
+  border:
+    1px dashed
+    var(--border-color, #d8c8b8);
+
+  background:
+    var(--card-background, #fff);
+}
+
+
+.video-loading span,
+.video-empty span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color:
+    var(--accent-color, #6b3038);
+
+  font-size: 25px;
+}
+
+
+.video-loading p,
+.video-empty p,
+.video-error p {
+  margin: 0;
+}
+
+
+/* =========================================================
+   DARK THEME
+   ========================================================= */
+
+[data-theme="dark"] .video-featured-card,
+[data-theme="dark"] .video-card,
+[data-theme="dark"] .video-loading,
+[data-theme="dark"] .video-empty,
+[data-theme="dark"] .video-error {
+
+  background:
+    var(--card-background, #302927);
+
+  border-color:
+    var(--border-color, #544945);
+
+}
+
+
+[data-theme="dark"] .video-description,
+[data-theme="dark"] .video-card-description {
+
+  color:
+    var(--text-color, #d1c7c1);
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .video-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .video-featured-card {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .video-featured-media,
+  .video-featured-media img {
+
+    min-height: 400px;
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .video-intro-section {
+    margin-bottom: 60px;
+  }
+
+
+  .video-intro {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+    padding: 30px 25px;
+  }
+
+
+  .video-intro-mark {
+    width: 58px;
+    height: 58px;
+
+    font-size: 31px;
+  }
+
+
+  .video-featured-section,
+  .video-list-section {
+    margin-bottom: 70px;
+  }
+
+
+  .video-featured-media,
+  .video-featured-media img {
+    min-height: 250px;
+  }
+
+
+  .video-featured-info {
+    padding: 32px 25px;
+  }
+
+
+  .video-grid {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+
+  .video-card-body {
+    padding:
+      22px 23px 25px;
+  }
+
+
+  .video-note-section {
+    margin-bottom: 70px;
+  }
+
+
+  .video-note {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    padding: 30px 25px;
+  }
+
+
+  .video-note-mark {
+    width: 54px;
+    height: 54px;
+
+    font-size: 32px;
+  }
+
+
+  .video-play {
+    width: 64px;
+    height: 64px;
+
+    font-size: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .video-featured-info {
+    padding: 27px 20px;
+  }
+
+
+  .video-card-body {
+    padding:
+      20px 19px 23px;
+  }
+
+
+  .video-intro {
+    padding: 26px 20px;
+  }
+
+
+  .video-note {
+    padding: 27px 20px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .video-featured,
+  .video-card,
+  .video-featured-media img,
+  .video-card-media img,
+  .video-play {
+    transition: none;
+  }
+
+
+  .video-featured,
+  .video-card {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   FAVORITES
+   ========================================================= */
+
+.favorite-filter-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.favorite-filter-button:hover {
+  transform: translateY(-1px);
+}
+
+.favorite-filter-button[aria-pressed="true"] {
+  color: #b64057;
+  border-color: #b64057;
+  background: rgba(182, 64, 87, 0.08);
+}
+
+.heart-icon {
+  display: inline-block;
+
+  color: #aaa;
+
+  font-size: 1.15rem;
+  line-height: 1;
+
+  transform-origin: center;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.favorite-filter-button:hover .heart-icon {
+  color: #b64057;
+}
+
+.favorite-filter-button[aria-pressed="true"] .heart-icon {
+  color: #c43f5b;
+
+  animation: heart-pop 0.35s ease;
+}
+
+@keyframes heart-pop {
+
+  0% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.35);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   HEART INSIDE POEM / PROSE CARD
+   ========================================================= */
+
+.poetry-card,
+.prose-card {
+  position: relative;
+}
+
+.favorite-button {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(120, 90, 90, 0.18);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  color: #999;
+
+  cursor: pointer;
+
+  font-size: 1.35rem;
+  line-height: 1;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.favorite-button:hover {
+  color: #c43f5b;
+
+  transform: scale(1.06);
+
+  border-color: rgba(196, 63, 91, 0.4);
+
+  box-shadow:
+    0 4px 15px rgba(196, 63, 91, 0.12);
+}
+
+.favorite-button.is-favorite {
+  color: #c43f5b;
+
+  background: rgba(196, 63, 91, 0.08);
+
+  border-color: rgba(196, 63, 91, 0.35);
+}
+
+.favorite-button.is-favorite .favorite-icon {
+  color: #c43f5b;
+
+  animation: heart-pop 0.35s ease;
+}
+
+
+/*
+   Кнопка "Додати в улюблені" всередині модалки вірша —
+   на відміну від .favorite-button на картці (кругла
+   іконка з абсолютним позиціюванням), тут повний напис
+   з текстом, тому вона йде звичайним рядком під заголовком,
+   а не поверх кнопки закриття (×), щоб не перекривались
+   і не з'являлась горизонтальна прокрутка.
+*/
+
+.modal-favorite {
+  position: static;
+
+  width: auto;
+  height: auto;
+
+  margin-top: 18px;
+
+  padding: 8px 16px;
+
+  border-radius: 30px;
+
+  gap: 8px;
+
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.modal-favorite .favorite-icon {
+  font-size: 1.1rem;
+}
+
+
+/* DARK THEME */
+
+[data-theme="dark"] .favorite-button {
+  background: rgba(30, 30, 30, 0.82);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+[data-theme="dark"] .favorite-button.is-favorite {
+  color: #ff7890;
+  background: rgba(255, 100, 130, 0.10);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .favorite-button {
+    width: 38px;
+    height: 38px;
+
+    top: 14px;
+    right: 14px;
+    font-size: 1.2rem;
+  }
+
+}
+
+
+/* =========================================================
+   POEM TEXT — KEEP LINE BREAKS
+   ========================================================= */
+
+.poetry-card-text,
+.poem-modal-text {
+  white-space: pre-line;
+}
+
+
+/* =========================================================
+   PROSE TEXT
+   ========================================================= */
+
+.prose-card-preview {
+  white-space: pre-line;
+}
+
+
+/* =========================================================
+   EXPANDED PROSE
+   ========================================================= */
+
+.prose-card.is-expanded {
+  grid-column: 1 / -1;
+}
+
+.prose-card-full {
+  margin-top: 1rem;
+
+  line-height: 1.9;
+
+  animation: prose-expand 0.3s ease;
+}
+
+@keyframes prose-expand {
+
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   SEARCH HIGHLIGHT
+   ========================================================= */
+
+.search-highlight {
+  color: inherit;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 15%,
+      rgba(235, 194, 82, 0.55) 15%,
+      rgba(235, 194, 82, 0.55) 90%,
+      transparent 90%
+    );
+
+  border-radius: 2px;
+
+  padding: 0 2px;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+
+  clip: rect(0, 0, 0, 0);
+
+  white-space: nowrap;
+
+  border: 0;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(196, 63, 91, 0.55);
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+} 
+/* =========================================================
+   У ПІДРУЧНИКАХ (pro-mene.html)
+   ========================================================= */
+
+.about-textbooks-section {
+  padding: 95px 0;
+  background:
+    var(--section-soft, #f5efe8);
+}
+
+.about-textbooks-section .section-head {
+  max-width: 760px;
+  margin-bottom: 48px;
+}
+
+.textbook-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.textbook-card {
+  position: relative;
+  min-height: 150px;
+  padding: 34px 30px;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border-color, #d8c8b8);
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.textbook-card:hover {
+  transform: translateY(-5px);
+  box-shadow:
+    0 18px 40px rgba(74, 45, 34, 0.09);
+}
+
+.textbook-card h3 {
+  position: relative;
+  margin: 0 0 15px;
+  font-size: 23px;
+}
+
+.textbook-meta {
+  position: relative;
+  margin: 0 0 6px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+.textbook-authors {
+  position: relative;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+
+@media (max-width: 900px) {
+
+  .textbook-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 620px) {
+
+  .textbook-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* =========================================================
+   ОПИС ВІРША (poetry-card-description / poem-modal-description)
+   За аналогією з .prose-card-description
+   ========================================================= */
+
+.poetry-card-description {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-color, var(--border));
+  color: var(--text-soft);
+  font-style: italic;
+}
+
+.poem-modal-description {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color, var(--border));
+  color: var(--text-soft);
+  font-style: italic;
+}
+/* =========================================================
+   КЛІКАБЕЛЬНІ ХЕШТЕГИ В КАРТКАХ + БЛОК "ЧИТАТИ БІЛЬШЕ ЗА ТЕМОЮ"
+   ========================================================= */
+
+.poetry-card-tag,
+.prose-card-tag {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+.poetry-card-tag:hover,
+.prose-card-tag:hover {
+  transform: translateY(-1px);
+
+  background: var(--accent);
+  color: #fff;
+}
+
+.poetry-card-tag.active,
+.prose-card-tag.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.related-by-tag {
+  margin-top: 16px;
+  padding-top: 16px;
+
+  border-top: 1px solid var(--border-color, var(--border));
+}
+
+.related-by-tag-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 10px;
+}
+
+.related-by-tag-title {
+  margin-bottom: 0;
+
+  color: var(--accent);
+
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.related-by-tag-all-link {
+  white-space: nowrap;
+
+  color: var(--accent);
+
+  font-family: "Caveat", cursive;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.related-by-tag-all-link:hover {
+  text-decoration: underline;
+}
+
+.related-by-tag-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.related-by-tag-item {
+  padding: 4px 0;
+
+  color: var(--text);
+
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-decoration-color: var(--accent-soft);
+}
+
+.related-by-tag-item:hover {
+  color: var(--accent);
+}
+
+.related-by-tag-empty,
+.related-by-tag-loading {
+  color: var(--text-soft);
+
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.related-by-tag-more {
+  margin-top: 10px;
+  padding: 6px 0;
+  border: none;
+
+  background: none;
+  color: var(--accent);
+
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.related-by-tag-more:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 480px) {
+
+  .poetry-card-tag,
+  .prose-card-tag {
+    padding: 6px 12px;
+  }
+
+  .related-by-tag-item {
+    padding: 8px 0;
+  }
+
+}

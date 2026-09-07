@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Відео за мотивами творчості Юлії Забіяки — пісні, читання поезії та інші відеороботи."
+  >
+
+  <title>Відео — Юлія Забіяка</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600;7..72,700&family=PT+Sans:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Застосування теми до появи сторінки -->
+  <script>
+    (function () {
+
+      const savedTheme =
+        localStorage.getItem("theme");
+
+      const theme =
+        savedTheme === "dark"
+          ? "dark"
+          : savedTheme === "light"
+            ? "light"
+            : (
+                window.matchMedia &&
+                window.matchMedia(
+                  "(prefers-color-scheme: dark)"
+                ).matches
+              )
+                ? "dark"
+                : "light";
+
+      document.documentElement.setAttribute(
+        "data-theme",
+        theme
+      );
+
+    })();
+  </script>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6HLBWGYJRE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6HLBWGYJRE');
+  </script>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="site-header">
+
+  <div class="wrap nav-row">
+
+    <a
+      class="brand"
+      href="index.html"
+    >
+
+      <span class="brand-name">
+        Юлія Забіяка
+      </span>
+
+      <small>
+        Поетеса · Письменниця · Християнка
+      </small>
+
+    </a>
+
+
+    <!-- МОБІЛЬНЕ МЕНЮ -->
+
+    <button
+      id="navToggle"
+      class="nav-toggle"
+      type="button"
+      aria-label="Відкрити меню"
+      aria-expanded="false"
+      aria-controls="mainNav"
+    >
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <div class="nav-area">
+
+      <nav
+        id="mainNav"
+        class="main-nav"
+        aria-label="Головна навігація"
+      >
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Головна
+            </a>
+          </li>
+
+          <li>
+            <a href="pro-mene.html">
+              Про мене
+            </a>
+          </li>
+
+          <li>
+            <a href="poeziya.html">
+              Поезія
+            </a>
+          </li>
+
+          <li>
+            <a href="proza.html">
+              Проза
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="video.html"
+              class="active"
+              aria-current="page"
+            >
+              Відео
+            </a>
+          </li>
+
+          <li>
+            <a href="knygy.html">
+              Книги
+            </a>
+          </li>
+
+          <li>
+            <a href="kontakty.html">
+              Контакти
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+      <!-- ПЕРЕМИКАЧ ТЕМИ -->
+
+      <button
+        id="themeToggle"
+        class="theme-toggle"
+        type="button"
+        aria-label="Увімкнути темну тему"
+        title="Змінити тему"
+      >
+
+        <span class="theme-icon theme-icon-light">
+          ☀
+        </span>
+
+        <span class="theme-icon theme-icon-dark">
+          ☾
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
+<main id="main">
+
+
+  <!-- =======================================================
+       HERO
+       ======================================================= -->
+
+  <section class="page-hero wrap">
+
+    <div class="section-head reveal">
+
+      <p class="section-eyebrow">
+        Творчість
+      </p>
+
+      <h1>
+        Відео
+      </h1>
+
+      <p>
+        Коли поезія оживає —
+        у пісні, голосі, музиці
+        та нових історіях.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       INTRO
+       ======================================================= -->
+
+  <section class="wrap video-intro-section">
+
+    <div class="video-intro reveal">
+
+      <div class="video-intro-mark">
+        ♪
+      </div>
+
+      <div>
+
+        <p class="section-eyebrow">
+          Коли слова звучать
+        </p>
+
+        <h2>
+          Поезія може мати різні голоси
+        </h2>
+
+        <p>
+          Вірші можуть залишатися на сторінці,
+          а можуть перетворюватися на пісні,
+          звучати у виконанні інших людей
+          та отримувати нове візуальне життя.
+        </p>
+
+        <p>
+          Тут зібрані відео, створені
+          за мотивами творчості
+          Юлії Забіяки.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       FEATURED VIDEO
+       ======================================================= -->
+
+  <section class="wrap video-featured-section">
+
+    <div class="section-head reveal">
+
+      <p class="section-eyebrow">
+        Вибране
+      </p>
+
+      <h2>
+        Твочість читачів
+      </h2>
+
+    </div>
+
+
+    <div
+      id="featuredVideo"
+      class="video-featured"
+    >
+
+      <div class="video-loading">
+        <span>✦</span>
+        <p>
+          Завантажуємо відео...
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       VIDEO COLLECTION
+       ======================================================= -->
+
+  <section class="wrap video-list-section">
+
+    <div class="section-head reveal">
+
+      <p class="section-eyebrow">
+        Відеотека
+      </p>
+
+      <h2>
+        Творчість у відео
+      </h2>
+
+      <p>
+        Пісні, читання поезії та інші
+        відео за мотивами творів.
+      </p>
+
+    </div>
+
+
+    <div
+      id="videoList"
+      class="video-grid"
+      aria-live="polite"
+    >
+
+      <div class="video-loading">
+
+        <span>✦</span>
+
+        <p>
+          Завантажуємо відео...
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       BOTTOM NOTE
+       ======================================================= -->
+
+  <section class="wrap video-note-section">
+
+    <div class="video-note reveal">
+
+      <div class="video-note-mark">
+        ✒
+      </div>
+
+      <div>
+
+        <p class="section-eyebrow">
+          Про творчість
+        </p>
+
+        <h2>
+          Слова знаходять нове життя
+        </h2>
+
+        <p>
+          Один вірш може залишитися
+          на сторінці, а може зазвучати
+          голосом, стати піснею
+          та знайти свого слухача.
+        </p>
+
+        <a
+          href="https://www.youtube.com/"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Дивитися на YouTube →
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="wrap">
+
+    <p class="footer-quote">
+      «Нехай слова знаходять шлях до серця.»
+    </p>
+
+
+    <div class="footer-row">
+
+      <div>
+
+        <nav
+          class="footer-nav"
+          aria-label="Навігація у футері"
+        >
+
+          <ul>
+
+            <li>
+              <a href="index.html">
+                Головна
+              </a>
+            </li>
+
+            <li>
+              <a href="pro-mene.html">
+                Про мене
+              </a>
+            </li>
+
+            <li>
+              <a href="poeziya.html">
+                Поезія
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="video.html"
+                aria-current="page"
+              >
+                Відео
+              </a>
+            </li>
+
+            <li>
+              <a href="proza.html">
+                Проза
+              </a>
+            </li>
+
+            <li>
+              <a href="knygy.html">
+                Книги
+              </a>
+            </li>
+
+            <li>
+              <a href="kontakty.html">
+                Контакти
+              </a>
+            </li>
+
+          </ul>
+
+        </nav>
+
+
+        <p class="footer-fine">
+          © Юлія Забіяка.
+          Пишу серцем · Живу вірою · Люблю Україну
+        </p>
+
+      </div>
+
+
+      <div class="footer-social">
+
+        <a
+          href="https://www.facebook.com/ulia.zabiaka/directory_work"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>
+
+        <a
+          href="https://www.instagram.com/iuliiaenei"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     SCROLL TO TOP
+     ========================================================= -->
+
+<button
+  id="toTop"
+  type="button"
+  aria-label="Повернутися нагору"
+  title="На початок сторінки"
+>
+  ↑
+</button>
+
+
+<!-- =========================================================
+     MAIN JAVASCRIPT
+     ========================================================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "main-video",
+    "title": "Вибране відео",
+    "description": "Відео за мотивами творчості Юлії Забіяки.",
+    "type": "featured",
+    "youtube": "ZDN064boMqs"
+  },
+  {
+    "id": "video-2",
+    "title": "Відео за мотивами поезії",
+    "description": "Творча відеоробота за мотивами твору Юлії Забіяки.",
+    "type": "song",
+    "youtube": "5i-ZEQRGQsQ"
+  },
+  {
+    "id": "video-3",
+    "title": "Відео за мотивами поезії",
+    "description": "Творча відеоробота за мотивами твору Юлії Забіяки.",
+    "type": "song",
+    "youtube": "EpfAfz6BXb0"
+  },
+  {
+    "id": "video-4",
+    "title": "Читання поезії",
+    "description": "Вірш Юлії Забіяки у відеовиконанні.",
+    "type": "reading",
+    "youtube": "oVuKjFzptdw"
+  },
+  {
+    "id": "video-5",
+    "title": "Поезія звучить",
+    "description": "Відео за мотивами творчості Юлії Забіяки.",
+    "type": "reading",
+    "youtube": "tfyGXgb8-mo"
+  },
+  {
+    "id": "video-6",
+    "title": "Відео за мотивами поезії",
+    "description": "Творча відеоробота за мотивами твору Юлії Забіяки.",
+    "type": "song",
+    "youtube": "TuI2nv3hxZQ"
+  },
+  {
+    "id": "video-7",
+    "title": "Поезія у відео",
+    "description": "Коротка відеоробота за мотивами творчості Юлії Забіяки.",
+    "type": "reading",
+    "youtube": "tsNwE2YQrH4"
+  }
+]
